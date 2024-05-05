@@ -27,14 +27,79 @@
 }
 
 * {
-  margin:0
+  margin: 0;
 }
-
-/* Stile carte Novità */
 
 body {
   background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* Banner */
+.container-immagine {
+  position: relative;
+  width: 100vw;
+  align-items: center;
+}
+.container-immagine > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.testo-ad-immagine {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.testo-immagine {
+  font-family: var(--font-ea);
+  font-size: var(--regular-font-size);
+  color: white;
+  text-align: left;
+}
+
+.bottoneban {
+  margin: 10px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: var(--regular-font-size);
+  border: 2px solid white;
+  transition: padding 0.05s linear, margin 0.05s linear;
+}
+
+.bottonerosso {
+  color: var(--color-black);
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+}
+
+.bottonetrasp {
+  background-color: transparent;
+  color: white;
+}
+
+.bottoniheader {
+  display: flex;
+}
+
+div.container-immagine a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.bottoniheader button:hover {
+  padding: 17px 34px;
+  margin: 8px 6px;
+}
+/* Stile carte Novità */
 
 .news {
   width: var(--content-general-width);
@@ -65,7 +130,8 @@ body {
   line-height: 1.4;
   text-align: left;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s linear, box-shadow 0.3s linear, z-index 0.3s ease-in;
+  transition: transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in;
 }
 
 .news-info {
@@ -73,16 +139,16 @@ body {
 }
 
 .red {
-  color: var(--color-red)
+  color: var(--color-red);
 }
 
 .black {
-  color: var(--color-black)
+  color: var(--color-black);
 }
 
 .details {
   margin: 50px;
-  padding:15px 30px;
+  padding: 15px 30px;
   border-radius: 4px;
   font-size: var(--regular-font-size);
   border: 2px solid var(--color-black);
@@ -161,20 +227,19 @@ div.menu button {
 }
 
 div.menu button:not(:last-child):before {
-  content:"";
+  content: "";
   position: absolute;
   top: 50%;
   right: 0%;
   width: 0;
   height: 25px;
   border-right: 2px solid var(--color-grey);
-  transform:translatey(-50%);
+  transform: translatey(-50%);
   z-index: 1;
-
 }
 
 div.menu button:after {
-  content:"";
+  content: "";
   top: 100%;
   width: 0;
   height: 0;
@@ -190,7 +255,7 @@ div.menu button:focus {
 }
 
 div.menu button:focus:after {
-  content:"";
+  content: "";
   position: absolute;
   top: 100%;
   width: 80%;
@@ -200,20 +265,20 @@ div.menu button:focus:after {
 }
 
 div.menu button:focus:before {
-  content:"";
+  content: "";
   position: absolute;
   top: 50%;
   right: 0%;
   width: 0;
   height: 25px;
   border-right: 2px solid var(--color-grey);
-  transform:translatey(-50%);
+  transform: translatey(-50%);
   z-index: 1;
 }
 
 button.details a {
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 }
 
 button.details:hover {
