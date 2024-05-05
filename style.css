@@ -1,0 +1,287 @@
+/* Lista di Font aggiuntivi */
+@font-face {
+  font-family: space-grotesk;
+  src: url(fonts/Space-Grotesk.ttf);
+}
+
+@font-face {
+  font-family: electronic-arts;
+  src: url(fonts/electronic-arts.ttf);
+}
+
+@font-face {
+  font-family: electronic-arts-bold;
+  src: url(fonts/electronic-arts-bold.ttf);
+}
+
+:root {
+  --bg-color: rgb(243, 243, 243);
+  --bg-color-cards: white;
+  --content-general-width: 1120px;
+  --font-ea: electronic-arts;
+  --font-ea-bold: electronic-arts-bold;
+  --color-red: rgb(255, 70, 71);
+  --color-black: rgb(22, 22, 22);
+  --color-grey: rgb(222, 222, 222);
+  --regular-font-size: 18px;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Banner */
+.container-immagine {
+  position: relative;
+  width: 100vw;
+  align-items: center;
+}
+.container-immagine > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.testo-ad-immagine {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.testo-immagine {
+  font-family: var(--font-ea);
+  font-size: var(--regular-font-size);
+  color: white;
+  text-align: left;
+}
+
+.bottoneban {
+  margin: 10px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: var(--regular-font-size);
+  border: 2px solid white;
+  transition: padding 0.05s linear, margin 0.05s linear;
+}
+
+.bottonerosso {
+  color: var(--color-black);
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+}
+
+.bottonetrasp {
+  background-color: transparent;
+  color: white;
+}
+
+.bottoniheader {
+  display: flex;
+}
+
+div.container-immagine a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.bottoniheader button:hover {
+  padding: 17px 34px;
+  margin: 8px 6px;
+}
+/* Stile carte Novità */
+
+.news {
+  width: var(--content-general-width);
+  font-family: var(--font-ea-bold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: stretch;
+}
+
+.grid {
+  margin: 10px 5px;
+  margin-top: 65px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+}
+
+.news-card {
+  background-color: var(--bg-color-cards);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  text-align: left;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in;
+}
+
+.news-info {
+  font-size: 14px;
+}
+
+.red {
+  color: var(--color-red);
+}
+
+.black {
+  color: var(--color-black);
+}
+
+.details {
+  margin: 50px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: var(--regular-font-size);
+  border: 2px solid var(--color-black);
+  transition: padding 0.05s linear, margin 0.05s linear;
+}
+
+.x-line {
+  border-bottom: 2px solid var(--color-grey);
+  width: 100%;
+}
+
+.y-line {
+  border-right: 2px solid var(--color-grey);
+  height: 25px;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 40px;
+}
+
+article.news button {
+  background-color: var(--bg-color);
+}
+
+section.news-card img {
+  max-width: 100%;
+}
+
+section.news-card a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+section.news-card a > div {
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+section.news-card a div div {
+  display: flex;
+  gap: 15px;
+}
+
+section.news-card h3 {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+section.news-card > a > div > p {
+  font-size: var(--regular-font-size);
+  font-family: var(--font-ea);
+}
+
+article.news section:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 40px 30px -2px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+article.news section:not(:hover) {
+  z-index: 1;
+}
+
+div.menu button {
+  border: 0;
+  padding: 15px;
+  font-size: var(--regular-font-size);
+  font-family: var(--font-ea);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.menu button:not(:last-child):before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 0;
+  height: 25px;
+  border-right: 2px solid var(--color-grey);
+  transform: translatey(-50%);
+  z-index: 1;
+}
+
+div.menu button:after {
+  content: "";
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-bottom: 2px solid var(--color-red);
+}
+
+div.menu button:hover {
+  background-color: rgba(222, 222, 222, 0.6);
+}
+
+div.menu button:focus {
+  background-color: rgba(222, 222, 222, 0.6);
+}
+
+div.menu button:focus:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 80%;
+  height: 0;
+  border-bottom: 2px solid var(--color-red);
+  transition: width 0.1s linear;
+}
+
+div.menu button:focus:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 0;
+  height: 25px;
+  border-right: 2px solid var(--color-grey);
+  transform: translatey(-50%);
+  z-index: 1;
+}
+
+button.details a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+button.details:hover {
+  padding: 17px 34px;
+  margin-top: 48px;
+}
