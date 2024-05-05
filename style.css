@@ -37,7 +37,70 @@ body {
   align-items: center;
 }
 
-/*
+/* Navbar */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position:fixed;
+  left: 0;
+  z-index: 3;
+  background-color: var(--bg-color);
+  width: 100%;
+}
+
+.hellip {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 1vw;
+}
+
+.hellip div {
+  background-color: var(--color-black);
+  height: 0.2vw;
+  width: 0.2vw;
+  border-radius: 50%;
+}
+
+nav a {
+  margin-left: 1vw;
+  margin-right: 1.5vw
+}
+
+nav button {
+  font-family: var(--font-ea);
+  color: var(--color-black);
+  font-size: 18px;
+  border: 0;
+  background-color: transparent;
+  margin: 0 0.5vw;
+}
+
+/* .hellip {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 60px;
+}
+
+.hellip div {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+} */
+
+nav {
+  display: flex
+}
 
 /* Banner */
 .container-immagine {
