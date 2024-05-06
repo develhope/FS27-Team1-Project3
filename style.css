@@ -156,14 +156,128 @@ nav {
 }
 
 div.container-immagine a {
-  text-decoration: none;
-  color: inherit;
+  
+  
 }
 
 div.bottoniheader button:hover {
-  padding: 17px 34px;
-  margin: 8px 6px;
+  
+  
 }
+/* style giochi in evidenza */
+ main{
+    display: flex;
+    flex-direction: column;
+    width: var(--content-general-width);
+    align-items: center;
+    position: relative;
+
+ }
+.container {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       gap: 2%;
+      }
+    
+      .image-container {
+        
+        position: relative;
+        width: 300px;
+        height: 300px;
+      }
+    
+      .image-container img { 
+        width: 150px ;
+        height: auto ;
+        max-height: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: transform 0.3s ease-out;
+
+       
+      }
+    
+      .link {
+        text-decoration: none;
+       color: transparent;
+       
+      }
+    
+      main a:hover img{
+        transform: translate(-50%,-65px);
+        
+      }
+    main a:hover span.link-text{
+      color: white;
+
+    }
+    main a:hover div.gradiente{
+      opacity: 1;
+    }
+      .link-text {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        transition: color 0.1s linear;
+      }
+    
+    .game1{
+      background-image: url(immagini/ufc-5-sfondo.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1; 
+      
+    }
+
+    .game1:after{
+      content: "";
+      background-color: rgba(255, 255, 255, 0.5);
+      background-size: cover;
+      z-index: 0;
+    }
+    .game2{
+      background-image: url(immagini/fc24-sfondo.jpeg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+    }
+    .game3{
+      background-image: url(immagini/f123-sfondo.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .game4{
+      background-image: url(immagini/nfs-unbound-sfondo.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .game5{
+      background-image: url(immagini/the-sims-4-sfondo.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .game6{
+      background-image: url(immagini/apex-legends-sfondo.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .gradiente{
+      position: absolute;
+      
+      background: linear-gradient(to right,rgba(255,0,0,0.5),rgba(0,0,255,0.5));
+      opacity: 0;
+      transition: opacity 0.3 ease-out;
+     
+    }
 /* Stile carte Novità */
 
 .news {
@@ -233,6 +347,7 @@ div.bottoniheader button:hover {
 h2 {
   font-size: 40px;
   margin: 40px;
+  font-family: var(--font-ea-bold);
 }
 
 article.news button {
@@ -348,5 +463,5 @@ button.details a {
 
 button.details:hover {
   padding: 17px 34px;
-  margin-top: 48px;
+  margin: 48px 0;
 }
