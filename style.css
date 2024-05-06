@@ -269,13 +269,16 @@ header > img {
   display: flex;
 }
 
+
 header a {
   text-decoration: none;
   color: inherit;
+
+
 }
 
 div.bottoniheader button:hover {
-  padding: 17px 34px;
+  padding: 17px 34px ;
   margin: 8px 6px;
 }
 
