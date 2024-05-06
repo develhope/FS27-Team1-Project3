@@ -57,6 +57,7 @@ nav {
   gap: 3px;
   padding: 1vw;
   margin: 0.1vw;
+  transition: margin 0.2s linear, padding 0.2s linear;
 }
 
 .hellip div {
@@ -64,6 +65,7 @@ nav {
   height: 5px;
   width: 5px;
   border-radius: 50%;
+  transition: background-color 0.2s linear, height 0.2s linear, width 0.2s linear;
 }
 
 .hellip:hover {
