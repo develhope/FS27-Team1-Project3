@@ -343,10 +343,10 @@ div.bottoniheader button:hover {
       background-repeat: no-repeat;
     }
     .gradiente{
-      position: absolute;
+     
       
       background: linear-gradient(to right,rgba(255,0,0,0.5),rgba(0,0,255,0.5));
-      opacity: 0;
+      opacity: 1;
       transition: opacity 0.3 ease-out;
      
     }
