@@ -75,6 +75,14 @@ nav {
   margin: 10px;
   transition: margin 0.2s linear, padding 0.2s linear;
 }
+.img1{
+  display: none;
+}
+@media(min-width:800px) {
+  .img1 {
+    display: block;
+  }
+}
 
 .hellip div {
   background-color: var(--color-black);
@@ -247,9 +255,21 @@ div.bottoniheader button:hover {
   margin: 10px 5px;
   margin-top: 65px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2%;
 }
+
+@media (min-width:572px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+
+@media (min-width:992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} 
 
 .news-card {
   background-color: var(--bg-color-cards);
