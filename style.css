@@ -75,6 +75,14 @@ nav {
   margin: 10px;
   transition: margin 0.2s linear, padding 0.2s linear;
 }
+.img1{
+  display: none;
+}
+@media(min-width:800px) {
+  .img1 {
+    display: block;
+  }
+}
 
 .hellip div {
   background-color: var(--color-black);
@@ -228,6 +236,114 @@ div.bottoniheader button:hover {
   padding: 17px 34px;
   margin: 8px 6px;
 }
+
+/* style giochi in evidenza */
+main{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  width: var(--content-general-width);
+  align-items: center;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 360px);
+  gap: 2.5%;
+}
+
+.container a {
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  /* width: 375px;
+  height: 375px;  */
+}
+
+.bg-image {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+    
+.image-container div img { 
+  width: 160px ;
+  height: auto ;
+  max-height: 65px;
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%,-50%);
+  transition: top 0.3s ease-out;
+  z-index: 3
+}
+    
+main a:hover div img{
+  top: 33%;
+}
+
+main a:hover div.contenitore-ombra{
+  top: 33%;
+}
+
+main a:hover span.link-text{
+  color: white;
+}
+      
+.link-text {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transition: color 0.1s linear;
+  text-decoration: none;
+  color: transparent;
+  font-family: var(--font-ea);
+  z-index: 3;
+}
+
+.contenitore-ombra {
+  width: 150px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba( 0, 0, 0, 0.2));
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15), 0px -10px 40px rgba(0, 0, 0, 0.15), 10px 0px 40px rgba(0, 0, 0, 0.15), -10px 0px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;;
+  transition: top 0.3s ease-out;
+  z-index: 2;
+}
+
+.opacità {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.gradiente{
+  background: linear-gradient(to right,rgb(11, 11, 68), var(--color-red));
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+main a:hover div.gradiente {
+  opacity: 0.8
+}
+
 /* Stile carte Novità */
 
 .news {
@@ -247,9 +363,21 @@ div.bottoniheader button:hover {
   margin: 10px 5px;
   margin-top: 65px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2%;
+  grid-template-columns: 1fr;
+  gap: 1.6%;
 }
+
+@media (min-width:572px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+
+@media (min-width:992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} 
 
 .news-card {
   background-color: var(--bg-color-cards);
@@ -260,7 +388,7 @@ div.bottoniheader button:hover {
   text-align: left;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in;
+  z-index 0.3s ease-in;
 }
 
 .news-info {
@@ -286,7 +414,9 @@ div.bottoniheader button:hover {
 
 .x-line {
   border-bottom: 2px solid var(--color-grey);
-  width: 100%;
+  width: 100vw;
+  position: absolute;
+  left: 0;
 }
 
 .y-line {
@@ -297,6 +427,7 @@ div.bottoniheader button:hover {
 h2 {
   font-size: 40px;
   margin: 40px;
+  font-family: var(--font-ea-bold);
 }
 
 article.news button {
@@ -373,6 +504,7 @@ div.menu button:after {
   width: 0;
   height: 0;
   border-bottom: 2px solid var(--color-red);
+  z-index: 1;
 }
 
 div.menu button:hover {
@@ -381,6 +513,7 @@ div.menu button:hover {
 
 div.menu button:focus {
   background-color: rgba(222, 222, 222, 0.6);
+  outline: none;
 }
 
 div.menu button:focus:after {
@@ -412,5 +545,5 @@ button.details a {
 
 button.details:hover {
   padding: 17px 34px;
-  margin-top: 48px;
+  margin: 48px 0;
 }
