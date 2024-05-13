@@ -566,12 +566,19 @@ button.details:hover {
 .container-immagine-prefooter {
   display: flex;
   justify-content: space-between;
+  width: 100vw;
+}
+
+.container-immagine-prefooter > img {
+  width: 100%;
+  height: auto;
 }
 
 .gradiente-banner {
   position: absolute;
   z-index: 1;
   place-self: center;
+
 }
 
 .logo-ad-immagine {
