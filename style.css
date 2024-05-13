@@ -24,6 +24,7 @@
   --color-black: rgb(22, 22, 22);
   --color-grey: rgb(222, 222, 222);
   --regular-font-size: 18px;
+  --ea-light-color: #f3f3f3;
 }
 
 * {
@@ -273,8 +274,6 @@ header > img {
 header a {
   text-decoration: none;
   color: inherit;
-
-
 }
 
 div.bottoniheader button:hover {
@@ -773,3 +772,152 @@ button.parental-control-button a {
 }
 
 /*FINE Sezione per l'iscrizione*/
+footer > div{
+  font-family: var(--font-ea);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: var(--content-general-width);
+  position: relative;
+  
+  
+
+}
+
+footer{
+  
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px ;
+  padding-bottom:60px ;
+}
+
+
+
+ .EA{
+   width: 64px;
+   height: auto;
+   
+}
+
+
+
+
+.tf{
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.second a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+
+.first div a{
+  font-size: 18px;
+  line-height: 112%;
+  margin: 16px 52px 16px 0
+}
+
+.lingua{
+  width: 190px;
+  height: 51px;
+  border: 2px solid gray;
+  font-size: 16px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.prezzo{
+ 
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 10px
+}
+
+.prezzo1{
+  color: black;
+  margin-left: 10px ;
+}
+
+.prezzo2{
+  color: black;
+  margin-left: 30px ;
+}
+
+.arrow{border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 170px;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.flag{
+  height: 11px;
+  width: 16px;
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 10px ;
+}
+
+
+
+.text1{
+  margin-left: 90px;
+  margin-top: 20px;
+ 
+}
+
+.first .EA{
+  margin-bottom: -25px;
+  margin-right: -30px;
+}
+
+.second{
+  margin-top: 15px;
+  margin-left: 90px;
+  
+}
+
+.second div a{
+  
+  margin: 16px 52px 16px 0
+}
+
+.lingua span{
+  padding-left: 10px;
+  padding-top: -30px ;
+}
+
+
+.boxb{
+  display: flex;
+  right:  0;
+  
+  position: absolute;
+  
+}
+
+.immagine-trust{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.rights{
+  padding-top: 10px;
+
+}
+
+
