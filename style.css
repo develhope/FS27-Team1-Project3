@@ -239,6 +239,7 @@ div.bottoniheader button:hover {
 
 /* style giochi in evidenza */
 main{
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   width: var(--content-general-width);
@@ -249,7 +250,7 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(2, 360px);
-  gap: 3%;
+  gap: 2.5%;
 }
 
 .container a {
@@ -264,31 +265,33 @@ main{
 }
 
 .bg-image {
+  width: 100%;
+  height: auto;
   z-index: -1;
 }
     
 .image-container div img { 
-  width: 150px ;
+  width: 160px ;
   height: auto ;
-  max-height: 60px;
+  max-height: 65px;
   position: absolute;
   left: 50%;
   top: 50%; 
   transform: translate(-50%,-50%);
-  transition: transform 0.3s ease-out;
-  z-index: 2
+  transition: top 0.3s ease-out;
+  z-index: 3
 }
     
 main a:hover div img{
-  transform: translate(-50%, -150%);
+  top: 33%;
+}
+
+main a:hover div.contenitore-ombra{
+  top: 33%;
 }
 
 main a:hover span.link-text{
   color: white;
-}
-    
-main a:hover div.gradiente{
-  opacity: 1;
 }
       
 .link-text {
@@ -300,64 +303,45 @@ main a:hover div.gradiente{
   text-decoration: none;
   color: transparent;
   font-family: var(--font-ea);
-  z-index: 2
+  z-index: 3;
 }
 
-
-.game1{
-  background-image: url(immagini/ufc-5-sfondo.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; 
+.contenitore-ombra {
+  width: 150px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), rgba( 0, 0, 0, 0.35));
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25), 0px -10px 40px rgba(0, 0, 0, 0.25), 10px 0px 40px rgba(0, 0, 0, 0.25), -10px 0px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;;
+  transition: top 0.3s ease-out;
+  z-index: 2;
 }
 
-.game1:after{
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  background-size: cover;
+.opacità {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
   z-index: 0;
-}
-  
-.game2{
-  background-image: url(immagini/fc24-sfondo.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.game3{
-  background-image: url(immagini/f123-sfondo.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.game4{
-  background-image: url(immagini/nfs-unbound-sfondo.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.game5{
-  background-image: url(immagini/the-sims-4-sfondo.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.game6{
-  background-image: url(immagini/apex-legends-sfondo.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .gradiente{
-  background: linear-gradient(to right,rgba(255,0,0,0.5),rgba(0,0,255,0.5));
-  opacity: 1;
-  transition: opacity 0.3 ease-out;
+  background: linear-gradient(to right,rgb(11, 11, 68), var(--color-red));
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+main a:hover div.gradiente {
+  opacity: 0.8
 }
 
 /* Stile carte Novità */
@@ -380,7 +364,7 @@ main a:hover div.gradiente{
   margin-top: 65px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2%;
+  gap: 1.6%;
 }
 
 @media (min-width:572px) {
@@ -430,7 +414,9 @@ main a:hover div.gradiente{
 
 .x-line {
   border-bottom: 2px solid var(--color-grey);
-  width: 100%;
+  width: 100vw;
+  position: absolute;
+  left: 0;
 }
 
 .y-line {
@@ -526,6 +512,7 @@ div.menu button:hover {
 
 div.menu button:focus {
   background-color: rgba(222, 222, 222, 0.6);
+  outline: none;
 }
 
 div.menu button:focus:after {
