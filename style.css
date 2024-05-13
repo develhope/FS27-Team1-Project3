@@ -75,10 +75,10 @@ nav {
   margin: 10px;
   transition: margin 0.2s linear, padding 0.2s linear;
 }
-.img1{
+.img1 {
   display: none;
 }
-@media(min-width:800px) {
+@media (min-width: 800px) {
   .img1 {
     display: block;
   }
@@ -238,7 +238,7 @@ div.bottoniheader button:hover {
 }
 
 /* style giochi in evidenza */
-main{
+main {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
@@ -269,34 +269,34 @@ main{
   height: auto;
   z-index: -1;
 }
-    
-.image-container div img { 
-  width: 160px ;
-  height: auto ;
+
+.image-container div img {
+  width: 160px;
+  height: auto;
   max-height: 65px;
   position: absolute;
   left: 50%;
-  top: 50%; 
-  transform: translate(-50%,-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   transition: top 0.3s ease-out;
-  z-index: 3
+  z-index: 3;
 }
-    
-main a:hover div img{
+
+main a:hover div img {
   top: 33%;
 }
 
-main a:hover div.contenitore-ombra{
+main a:hover div.contenitore-ombra {
   top: 33%;
 }
 
-main a:hover span.link-text{
+main a:hover span.link-text {
   color: white;
 }
-      
+
 .link-text {
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   transition: color 0.1s linear;
@@ -315,9 +315,15 @@ main a:hover span.link-text{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba( 0, 0, 0, 0.2));
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15), 0px -10px 40px rgba(0, 0, 0, 0.15), 10px 0px 40px rgba(0, 0, 0, 0.15), -10px 0px 40px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.2)
+  );
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15),
+    0px -10px 40px rgba(0, 0, 0, 0.15), 10px 0px 40px rgba(0, 0, 0, 0.15),
+    -10px 0px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
   transition: top 0.3s ease-out;
   z-index: 2;
 }
@@ -330,8 +336,8 @@ main a:hover span.link-text{
   z-index: 0;
 }
 
-.gradiente{
-  background: linear-gradient(to right,rgb(11, 11, 68), var(--color-red));
+.gradiente {
+  background: linear-gradient(to right, rgb(11, 11, 68), var(--color-red));
   position: absolute;
   opacity: 0;
   width: 100%;
@@ -341,7 +347,7 @@ main a:hover span.link-text{
 }
 
 main a:hover div.gradiente {
-  opacity: 0.8
+  opacity: 0.8;
 }
 
 /* Stile carte Novità */
@@ -367,17 +373,17 @@ main a:hover div.gradiente {
   gap: 1.6%;
 }
 
-@media (min-width:572px) {
+@media (min-width: 572px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
-} 
+}
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-} 
+}
 
 .news-card {
   background-color: var(--bg-color-cards);
@@ -388,7 +394,7 @@ main a:hover div.gradiente {
   text-align: left;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s linear, box-shadow 0.3s linear,
-  z-index 0.3s ease-in;
+    z-index 0.3s ease-in;
 }
 
 .news-info {
@@ -547,3 +553,172 @@ button.details:hover {
   padding: 17px 34px;
   margin: 48px 0;
 }
+
+/*INIZIO Sezione per l'iscrizione*/
+
+.prefooter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+}
+
+.container-immagine-prefooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gradiente-banner {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+}
+
+.logo-ad-immagine {
+  position: absolute;
+  top: 15%;
+  left: 23%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 200px;
+  gap: 20px;
+  z-index: 2;
+}
+
+.testo-immagine-sub {
+  font-family: var(--font-ea);
+  font-size: var(--regular-font-size);
+  color: white;
+  text-align: left;
+  width: 500px;
+}
+
+.bottone-subscribe {
+  background-color: transparent;
+  margin-top: 5px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: var(--regular-font-size);
+  border: 2px solid white;
+  transition: padding 0.05s linear, margin 0.05s linear;
+}
+
+.bottone-subscribe a {
+  text-decoration: none;
+  color: white;
+}
+
+.parental-control-stripe {
+  position: relative;
+  background-color: #6fb0d6;
+  display: flex;
+  align-items: center;
+}
+
+.parental-field-1 {
+  margin-left: 23%;
+}
+
+.parental-field-2 {
+  position: absolute;
+  left: 66%;
+  transform: translateX(50%);
+}
+
+.parental-control-text {
+  font-family: var(--font-ea);
+  font-size: 26px;
+  color: #161616;
+  width: 500px;
+  margin-left: 0;
+}
+
+.parental-control-button {
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: var(--regular-font-size);
+  border: 2px solid var(--color-black);
+  transition: padding 0.05s linear, margin 0.05s linear;
+  background-color: transparent;
+  margin: 1px 4px;
+}
+
+button.parental-control-button:hover {
+  padding: 17px 34px;
+  margin: 0;
+}
+
+button.parental-control-button a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.conditions-stripe {
+  background-color: #eaeaea;
+  padding: 40px 20%;
+  padding-bottom: 0px;
+}
+
+.conditions {
+  color: #161616;
+  margin-bottom: 10px;
+  font-family: var(--font-ea);
+  margin-left: 5%;
+}
+
+.link-conditions {
+  color: red;
+  text-decoration: none;
+}
+
+.footer-line {
+  border-bottom: 1px solid var(--color-black);
+  width: auto;
+  margin-left: 5%;
+}
+
+.link-list {
+  margin-top: 50px;
+  display: flex;
+  gap: 10%;
+  margin-left: 5%;
+}
+
+.link-list a {
+  color: black;
+  text-decoration: none;
+  font-size: medium;
+  font-family: var(--font-ea);
+}
+
+.link-list a:hover {
+  color: black;
+}
+
+.join-conversation {
+  font-weight: 700;
+  margin-left: auto;
+  font-family: var(--font-ea);
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 75px;
+}
+
+.socials img {
+  width: 30px;
+  transition: transform 0.3s;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/*FINE Sezione per l'iscrizione*/
