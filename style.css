@@ -39,18 +39,60 @@ body {
 
 /*Aside */
 aside {
-  align-items: right;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  justify-content: flex-end;
+  background-color: var(--color-black);
+  z-index: 4;
+  align-items: center;
+  gap: 50px;
 }
 
-.aiuto {
-  font-family: var(--font-ea);
+.logo-ea {
+  margin-right: 50px;
+}
+
+.profilo,
+.aiuto,
+.logo-ea {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  height: 20px;
+}
+
+button.profilo:hover img.img-principale-aside,
+button.aiuto:hover img.img-principale-aside,
+a.logo-ea:hover img.img-principale-aside {
+  display: none;
+}
+
+.img-principale-aside {
+  z-index: 5;
+}
+
+body button {
+  cursor: pointer;
+}
+
+aside img {
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 nav {
+  width: 100vw;
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 3;
+  z-index: 4;
 }
 
 /* Navbar */
@@ -59,12 +101,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: fixed;
   left: 0;
   background-color: var(--bg-color);
   width: 100%;
   height: 55px;
   gap: 40px;
+  padding-left: 20px;
 }
 
 .hellip {
@@ -182,7 +224,7 @@ header {
   position: relative;
   width: 100vw;
   align-items: center;
-  margin-top: 55px;
+  margin-top: 45px;
 }
 header > img {
   width: 100%;
@@ -566,6 +608,12 @@ button.details:hover {
 .container-immagine-prefooter {
   display: flex;
   justify-content: space-between;
+  width: 100vw;
+}
+
+.container-immagine-prefooter > img {
+  width: 100%;
+  height: auto;
 }
 
 .gradiente-banner {
