@@ -1,0 +1,29 @@
+:root {
+  --content-general-width: 85vw;
+  --regular-font-size:16px
+}
+
+/* Inizio sezione Giochi in Evidenza e Ultime Notizie */
+h2 {
+  font-size: 30px;
+}
+
+.container,
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.container {
+  margin-bottom: -25px;
+}
+
+.details {
+  padding: 12px 24px;
+}
+
+button.details:hover {
+  padding: 14px 28px;
+}
+
+/* Fine sezione Giochi in Evidenza e Ultime Notizie */

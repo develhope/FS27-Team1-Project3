@@ -1,0 +1,18 @@
+:root {
+  --content-general-width: 90vw;
+  --main-card-width: calc(var(--content-general-width) / 3);
+}
+
+
+/* Sezione Giochi in Evidenze e Ultime Notizie */
+
+.image.container {
+  width: var(--main-card-width);
+  height: var(--main-card-width);
+}
+
+h2 {
+  font-size: 40px;
+}
+
+/* Fine sezione Giochi in Evidenza e Ultime Notizie */
