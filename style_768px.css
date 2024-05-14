@@ -1,0 +1,42 @@
+/* Inizio sezione Giochi in Evidenza e Ultime Notizie */
+.container,
+.grid {
+  grid-template-columns: 1fr;
+}
+
+.news-card img,
+.articolo-della-news {
+  display: none;
+}
+
+.news-card {
+  line-height: 1.1;
+}
+
+.news-info {
+  font-size: 13px;
+}
+
+section.news-card a > div {
+  display:flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+section.news-card h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+section a div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Fine sezione Giochi in Evidenza e Ultime Notizie */
