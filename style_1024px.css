@@ -15,15 +15,17 @@ h2 {
 }
 
 .container {
-  margin-bottom: -25px;
+  margin-bottom: -15px;
 }
 
 .details {
   padding: 12px 24px;
+  margin: 40px;
 }
 
 button.details:hover {
   padding: 14px 28px;
+  margin: 38px
 }
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
