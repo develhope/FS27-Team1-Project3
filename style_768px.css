@@ -46,6 +46,11 @@ section a div div {
   justify-content: center;
 }
 
+.image-container div img {
+  width: 50%;
+  max-height: 20%;
+}
+
 /* .details {
   margin: 40px;
 } */

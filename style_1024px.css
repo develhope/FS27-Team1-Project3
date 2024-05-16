@@ -23,6 +23,12 @@ h2 {
   margin: 40px;
 }
 
+.image-container div img,
+.contenitore-ombra {
+  width: 30%;
+  max-height: 19.5%;
+}
+
 button.details:hover {
   padding: 14px 28px;
   margin: 38px
