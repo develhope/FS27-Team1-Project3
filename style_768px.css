@@ -2,6 +2,13 @@
 .container,
 .grid {
   grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.image-container,
+.news-card {
+  width: 100%;
+  max-width: var(--content-general-width);
 }
 
 .news-card img,
@@ -11,6 +18,7 @@
 
 .news-card {
   line-height: 1.1;
+  align-items: center;
 }
 
 .news-info {
@@ -38,5 +46,13 @@ section a div div {
   justify-content: center;
 }
 
+.image-container div img {
+  width: 50%;
+  max-height: 20%;
+}
+
+/* .details {
+  margin: 40px;
+} */
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */

@@ -15,15 +15,23 @@ h2 {
 }
 
 .container {
-  margin-bottom: -25px;
+  margin-bottom: -15px;
 }
 
 .details {
   padding: 12px 24px;
+  margin: 40px;
+}
+
+.image-container div img,
+.contenitore-ombra {
+  width: 30%;
+  max-height: 19.5%;
 }
 
 button.details:hover {
   padding: 14px 28px;
+  margin: 38px
 }
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */

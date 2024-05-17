@@ -420,6 +420,7 @@ main a:hover div.gradiente {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6%;
+
 }
 
 .news-card {

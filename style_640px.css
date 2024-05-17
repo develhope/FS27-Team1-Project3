@@ -1,0 +1,8 @@
+button:not(nav button) {
+  box-sizing: border-box;
+  width: var(--content-general-width);
+}
+
+button:hover:not(nav button) {
+  width: calc(var(--content-general-width) + 8px);
+}
