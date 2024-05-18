@@ -420,6 +420,7 @@ main a:hover div.gradiente {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6%;
+  
 
 }
 
@@ -468,6 +469,33 @@ main a:hover div.gradiente {
   height: 25px;
 }
 
+
+.news-card h3 sup {
+  font-size: 0.635rem;
+}
+
+.news-card p sup {
+  font-size: 0.45rem;
+  vertical-align:top;
+}
+
+/* 
+Nasconde gli elementi extra.
+Da linkare a .news-card
+*/
+.hidden-news {
+  display: none;
+}
+
+
+/* 
+classe per sistemare margine in EA SPORTS FC 
+da linkare a .grid
+*/
+.margin-news {
+  margin-bottom: 105px;
+}
+
 h2 {
   font-size: 40px;
   margin: 40px;
@@ -501,7 +529,7 @@ section.news-card a div div {
 section.news-card h3 {
   margin-top: 5px;
   margin-bottom: 8px;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 section.news-card > a > div > p {
@@ -590,6 +618,12 @@ button.details a {
 button.details:hover {
   padding: 17px 34px;
   margin: 48px 0;
+}
+
+.section-hover-effect {
+  transform: translateY(-10px);
+  box-shadow: 2px 40px 30px -2px rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 /*INIZIO Sezione per l'iscrizione*/
