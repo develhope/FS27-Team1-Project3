@@ -14,7 +14,7 @@ const bottoneBf = document.getElementById(`bottone-bf`);
 const bottoneNfs = document.getElementById(`bottone-nfs`);
 
 const arrayBottoni = document.querySelectorAll(`.menu button`);
-console.log(bottoneEaSports);
+
 /* Creo una variabile che mi permette di cambiare l'elemento in focus */
 
 let bottoneSelezionato = bottoneNotizieEa;
