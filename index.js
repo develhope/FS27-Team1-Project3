@@ -3,6 +3,22 @@
 /* Trovo l'elemento grid */
 const newsGrid = document.querySelector(`.grid`);
 
+/* Trovo ogni bottone della sezione menù delle Ultime Notizie e un array che li contiene*/
+const bottoneNotizieEa = document.getElementById(`bottone-notizie-ea`);
+const bottoneEaSports = document.getElementById(`bottone-ea-sports`);
+const bottoneApex = document.getElementById(`bottone-apex`);
+const bottoneTheSims4 = document.getElementById(`bottone-the-sims-4`);
+const bottoneStarWars = document.getElementById(`bottone-star-wars`);
+const bottoneF1 = document.getElementById(`bottone-f1`);
+const bottoneBf = document.getElementById(`bottone-bf`);
+const bottoneNfs = document.getElementById(`bottone-nfs`);
+
+const arrayBottoni = document.querySelectorAll(`.menu button`);
+console.log(bottoneEaSports);
+/* Creo una variabile che mi permette di cambiare l'elemento in focus */
+
+let bottoneSelezionato = bottoneNotizieEa;
+
 /* Trovo ogni elemento da cambiare delle prime 6 card */
 
 /* Immagini notizia*/
@@ -81,6 +97,60 @@ const newsInfo4 = document.getElementById(`author-and-date-4`);
 const newsInfo5 = document.getElementById(`author-and-date-5`);
 const newsInfo6 = document.getElementById(`author-and-date-6`);
 
+/* Trovo il menù delle varie categorie delle Ultime novità con
+i contenitori delle frecce */
+
+const categoryList = document.querySelector(`.menu`);
+const frecciaSinistra = document.querySelector(`.contenitore-freccia-sinistra`);
+const frecciaDestra = document.querySelector(`.contenitore-freccia-destra`);
+
+/* Disabilito l'effetto di default della sidebar */
+categoryList.style.overflowX = `hidden`;
+
+/* Faccio in modo che all'apparire della sidebar escano le frecce */
+
+function buttonShow() {
+  if (categoryList.scrollWidth > categoryList.clientWidth) {
+    frecciaDestra.style.display = `flex`;
+  } else {
+    frecciaDestra.style.display = `none`;
+  }
+}
+
+buttonShow();
+
+window.addEventListener(`resize`, buttonShow);
+
+/* Creo le due funzioni gemelle che faranno scrollare la sidebare di menu, inserendo
+all'interno una funzione che controlla la posizione della scrollbar per nascondere gli
+elementi */
+
+function arrowManagment() {
+  if (categoryList.scrollLeft >= 20) {
+    frecciaSinistra.style.display = `flex`;
+  } else {
+    frecciaSinistra.style.display = `none`;
+  }
+  /* calcolo la lunghezza della scrollbar */
+  let maxScrollValue = categoryList.scrollWidth - categoryList.clientWidth;
+  /* scrollWidth = lunghezza totale / clientWidth = lunghezza visualizzata dallo User */
+
+  if (categoryList.scrollLeft >= maxScrollValue) {
+    frecciaDestra.style.display = `none`;
+  } else {
+    frecciaDestra.style.display = `flex`;
+  }
+}
+
+function moveLeft() {
+  categoryList.scrollLeft += 400;
+  setTimeout(arrowManagment, 500);
+}
+
+function moveRight() {
+  categoryList.scrollLeft -= 400;
+  setTimeout(arrowManagment, 500);
+}
 /* Creo dei duplicati di tutti gli .innerHTML, delle .src e degli .alt 
 del bottone Notizie EA come backup */
 
@@ -213,63 +283,29 @@ function newsNotizieEA() {
   newsText5.innerHTML = tempText5;
   newsText6.innerHTML = tempText6;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneNotizieEa) {
+    bottoneSelezionato = bottoneNotizieEa;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -283,7 +319,49 @@ function newsNotizieEA() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsEaSportsFc() {
@@ -375,63 +453,29 @@ function newsEaSportsFc() {
   newsText5.innerHTML = ``;
   newsText6.innerHTML = `L'aggiornamento delle feste (aggiornamento n°6) è vicino e non vediamo l'ora di parlarvi delle fantastiche modifiche e aggiunte a EA SPORTS FC<span><sup>TM</sup></span> 24.`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneEaSports) {
+    bottoneSelezionato = bottoneEaSports;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -445,7 +489,49 @@ function newsEaSportsFc() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsApexLegends() {
@@ -533,63 +619,29 @@ function newsApexLegends() {
   newsText5.innerHTML = `Mostra a tutti il tuo amore per la ALGS con questi fantastici Twitch Drop!`;
   newsText6.innerHTML = `Dal 2 al 5 maggio, segui il primo evento LAN della 4ª edizione della ALGS. Scopri di più sulle squadre, le dirette, i gironi e non solo!`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneApex) {
+    bottoneSelezionato = bottoneApex;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -603,7 +655,49 @@ function newsApexLegends() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsTheSims4() {
@@ -691,63 +785,29 @@ function newsTheSims4() {
   newsText5.innerHTML = `Un aggiornamento tra i più scintillanti`;
   newsText6.innerHTML = `Sei tu a creare The Sims con Arethabee`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneTheSims4) {
+    bottoneSelezionato = bottoneTheSims4;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -761,7 +821,49 @@ function newsTheSims4() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsStarWars() {
@@ -852,63 +954,29 @@ function newsStarWars() {
   newsText5.innerHTML = `Scopri le abilità della Falange Gungan in questa presentazione!`;
   newsText6.innerHTML = `Star Wars<span><sup>TM</sup></span>: Gli eroi della galassia è in arrivo su PC`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneStarWars) {
+    bottoneSelezionato = bottoneStarWars;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -922,7 +990,49 @@ function newsStarWars() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsF1() {
@@ -1010,63 +1120,29 @@ function newsF1() {
   newsText5.innerHTML = `I Grand Prix d'Olanda e d'Italia sono gli ultimi a essere stati inclusi nell'aggiornamento delle valutazioni dei piloti di F1® 23`;
   newsText6.innerHTML = `Con questa patch di F1® 23 arrivano alcune grandi aggiunte e uno degli autraliani più amati dai fan`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneF1) {
+    bottoneSelezionato = bottoneF1;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -1080,7 +1156,49 @@ function newsF1() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsBattlefield() {
@@ -1168,63 +1286,29 @@ function newsBattlefield() {
   newsText5.innerHTML = `Piccolo hotfix successivo all'uscita dell'aggiornamento 7.0 di Battlefield 2042.`;
   newsText6.innerHTML = `Battlefield 2042, Battlefield V, EA anticheat`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneBf) {
+    bottoneSelezionato = bottoneBf;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -1238,7 +1322,49 @@ function newsBattlefield() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 
 function newsNFS() {
@@ -1329,63 +1455,29 @@ function newsNFS() {
   newsText5.innerHTML = `Preparati a scoprire gli aggiornamenti di gioco in arrivo a tutta velocità in Need for Speed Hot Pursuit Remastered.`;
   newsText6.innerHTML = `Preparati ad ammirare incredibili miglioramenti grafici e a sfrecciare attraverso strabilianti ambientazioni in Need for Speed Hot Pursuit Remastered.`;
 
-  /* riproduco l'effetto :hover al click, dando la
+  /* controllo se questo è il pulsante selezionato,
+  così da rendere l'effetto hover solo la prima volta
+  che cambia */
+
+  if (bottoneSelezionato !== bottoneNfs) {
+    bottoneSelezionato = bottoneNfs;
+
+    /* riproduco l'effetto :hover al click, dando la
     classe al click e togliendola subito dopo */
 
-  /* tolgo la transition */
-  newsCard1.style.transition = `none`;
-  newsCard2.style.transition = `none`;
-  newsCard3.style.transition = `none`;
-  newsCard4.style.transition = `none`;
-  newsCard5.style.transition = `none`;
-  newsCard6.style.transition = `none`;
-  newsCard7.style.transition = `none`;
-  newsCard8.style.transition = `none`;
-  newsCard9.style.transition = `none`;
-  newsCard10.style.transition = `none`;
-  newsCard11.style.transition = `none`;
-  newsCard12.style.transition = `none`;
-
-  newsCard1.classList.toggle(`section-hover-effect`);
-  newsCard2.classList.toggle(`section-hover-effect`);
-  newsCard3.classList.toggle(`section-hover-effect`);
-  newsCard4.classList.toggle(`section-hover-effect`);
-  newsCard5.classList.toggle(`section-hover-effect`);
-  newsCard6.classList.toggle(`section-hover-effect`);
-  newsCard7.classList.toggle(`section-hover-effect`);
-  newsCard8.classList.toggle(`section-hover-effect`);
-  newsCard9.classList.toggle(`section-hover-effect`);
-  newsCard10.classList.toggle(`section-hover-effect`);
-  newsCard11.classList.toggle(`section-hover-effect`);
-  newsCard12.classList.toggle(`section-hover-effect`);
-
-  setTimeout(() => {
-    /* reinserisco la transition */
-
-    newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
-    newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
-    z-index 0.3s ease-in`;
+    /* tolgo la transition */
+    newsCard1.style.transition = `none`;
+    newsCard2.style.transition = `none`;
+    newsCard3.style.transition = `none`;
+    newsCard4.style.transition = `none`;
+    newsCard5.style.transition = `none`;
+    newsCard6.style.transition = `none`;
+    newsCard7.style.transition = `none`;
+    newsCard8.style.transition = `none`;
+    newsCard9.style.transition = `none`;
+    newsCard10.style.transition = `none`;
+    newsCard11.style.transition = `none`;
+    newsCard12.style.transition = `none`;
 
     newsCard1.classList.toggle(`section-hover-effect`);
     newsCard2.classList.toggle(`section-hover-effect`);
@@ -1399,6 +1491,48 @@ function newsNFS() {
     newsCard10.classList.toggle(`section-hover-effect`);
     newsCard11.classList.toggle(`section-hover-effect`);
     newsCard12.classList.toggle(`section-hover-effect`);
-  }, 100);
+
+    setTimeout(() => {
+      /* reinserisco la transition */
+
+      newsCard1.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard2.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard3.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard4.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard5.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard6.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard7.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard8.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard9.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard10.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard11.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+      newsCard12.style.transition = `transform 0.3s linear, box-shadow 0.3s linear,
+    z-index 0.3s ease-in`;
+
+      newsCard1.classList.toggle(`section-hover-effect`);
+      newsCard2.classList.toggle(`section-hover-effect`);
+      newsCard3.classList.toggle(`section-hover-effect`);
+      newsCard4.classList.toggle(`section-hover-effect`);
+      newsCard5.classList.toggle(`section-hover-effect`);
+      newsCard6.classList.toggle(`section-hover-effect`);
+      newsCard7.classList.toggle(`section-hover-effect`);
+      newsCard8.classList.toggle(`section-hover-effect`);
+      newsCard9.classList.toggle(`section-hover-effect`);
+      newsCard10.classList.toggle(`section-hover-effect`);
+      newsCard11.classList.toggle(`section-hover-effect`);
+      newsCard12.classList.toggle(`section-hover-effect`);
+    }, 100);
+  }
 }
 /* FINE SEZIONE ULTIME NOVITA' */
