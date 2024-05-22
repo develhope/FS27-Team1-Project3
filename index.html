@@ -189,24 +189,56 @@
     <article class="news">
       <h2>Ultime novità</h2>
 
-      <div>
+      <div class="ultime-novità">
         <!--Bottoni per il menù, utilizzati per filtrare le notizie-->
         <div id="news-menu" class="menu">
-          <button autofocus onclick="newsNotizieEA()">Notizie EA</button>
+          <div class="contenitore-freccia-sinistra" onclick="moveRight()">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+             viewBox="0 0 24 24" 
+             stroke-width="1.5" 
+              stroke="currentColor" 
+              class="w-6 h-6"
+            >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              d="M15.75 19.5 8.25 12l7.5-7.5" 
+              />
+            </svg>
+          </div>
+          <button autofocus onclick="newsNotizieEA()" id="bottone-notizie-ea"><p>Notizie EA</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsEaSportsFc()">EA SPORTS FC</button>
+          <button onclick="newsEaSportsFc()" id="bottone-ea-sports"><p>EA SPORTS FC</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsApexLegends()">Apex Legends</button>
+          <button onclick="newsApexLegends()" id="bottone-apex"><p>Apex Legends</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsTheSims4()">The Sims 4</button>
+          <button onclick="newsTheSims4()" id="bottone-the-sims-4"><p>The Sims 4</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsStarWars()">Star Wars</button>
+          <button onclick="newsStarWars()" id="bottone-star-wars"><p>Star Wars</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsF1()">F1</button>
+          <button onclick="newsF1()" id="bottone-f1"><p>F1</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsBattlefield()">Battlefield</button>
+          <button onclick="newsBattlefield()" id="bottone-bf"><p>Battlefield</p><div class="red-line"></div></button>
           <!-- <div class="y-line"></div> -->
-          <button onclick="newsNFS()">Need For Speed</button>
+          <button onclick="newsNFS()" id="bottone-nfs"><p>Need For Speed</p><div class="red-line"></div></button>
+          <div class="contenitore-freccia-destra" onclick="moveLeft()">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke-width="1.5" 
+              stroke="currentColor" 
+              class="w-6 h-6">
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                d="m8.25 4.5 7.5 7.5-7.5 7.5" 
+              />
+            </svg>
+            
+          </div>
         </div>
 
         <div class="x-line"></div>

@@ -53,6 +53,7 @@ header {
   max-width: var(--content-general-width);
 }
 
+
 .news-card img,
 .articolo-della-news {
   display: none;
