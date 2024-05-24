@@ -1,3 +1,45 @@
+/*Responsive Header*/
+header > img {
+  content: url(immagini/Banner\ 767.jpg);
+}
+
+header {
+  overflow: hidden;
+  height: 900px;
+}
+
+.testo-ad-immagine {
+  width: 100;
+  transform: scale(1.1);
+}
+
+.container-2 {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  bottom: 17%;
+}
+
+#titolo-banner {
+  font-size: 35px;
+}
+
+#testo-banner {
+  font-size: 25px;
+}
+
+.bottoneban {
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/*fine media query header*/
+
 /* Inizio sezione Giochi in Evidenza e Ultime Notizie */
 .container,
 .grid {
@@ -26,7 +68,7 @@
 }
 
 section.news-card a > div {
-  display:flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;

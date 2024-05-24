@@ -1,3 +1,39 @@
+/*Responsive Header*/
+header > img {
+  content: url(immagini/Banner\ 1455.jpg);
+}
+
+.testo-ad-immagine {
+  width: 100%;
+  top: 8%;
+  transform: scale(0.5);
+}
+
+.container-2{
+  position:absolute;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+}
+
+#titolo-banner {
+  font-size: 60px;
+}
+
+#testo-banner {
+  font-size: 40px;
+}
+
+.bottoneban {
+  padding: 30px 60px;
+  font-size: 26px;
+}
+
+
 :root {
   --content-general-width: 90vw;
   /* --main-card-width: calc(var(--content-general-width) / 3); */

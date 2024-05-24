@@ -1,6 +1,43 @@
+/*Responsive Header*/
+header > img {
+  content: url(immagini/banner\ 1023.jpg);
+}
+
+.testo-ad-immagine {
+  width: 100%;
+  top: 10%;
+  transform: scale(0.5);
+}
+
+.container-2{
+  position:absolute;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+}
+
+#titolo-banner {
+  font-size: 60px;
+}
+
+#testo-banner {
+  font-size: 40px;
+}
+
+.bottoneban {
+  padding: 30px 60px;
+  font-size: 26px;
+}
+
+/*fine media query header*/
+
 :root {
   --content-general-width: 85vw;
-  --regular-font-size:16px
+  --regular-font-size: 16px;
 }
 
 /* Inizio sezione Giochi in Evidenza e Ultime Notizie */
@@ -31,7 +68,7 @@ h2 {
 
 button.details:hover {
   padding: 14px 28px;
-  margin: 38px
+  margin: 38px;
 }
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
