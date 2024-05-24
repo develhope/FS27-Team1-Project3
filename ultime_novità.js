@@ -97,6 +97,15 @@ const newsInfo4 = document.getElementById(`author-and-date-4`);
 const newsInfo5 = document.getElementById(`author-and-date-5`);
 const newsInfo6 = document.getElementById(`author-and-date-6`);
 
+/* Reimposto il numero di default delle card notizie */
+
+newsCard7.style.display = `none`;
+newsCard8.style.display = `none`;
+newsCard9.style.display = `none`;
+newsCard10.style.display = `none`;
+newsCard11.style.display = `none`;
+newsCard12.style.display = `none`;
+
 /* Trovo il menù delle varie categorie delle Ultime novità con
 i contenitori delle frecce */
 
