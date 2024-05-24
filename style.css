@@ -51,6 +51,7 @@ aside {
   z-index: 4;
   align-items: center;
   gap: 50px;
+  transition: transform 0.2s linear;
 }
 
 .logo-ea {
@@ -94,6 +95,7 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 4;
+  transition: transform 0.2s linear;
 }
 
 /* Navbar */
