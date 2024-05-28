@@ -9,8 +9,8 @@ header > img {
   transform: scale(0.5);
 }
 
-.container-2{
-  position:absolute;
+.container-2 {
+  position: absolute;
   display: flex;
   width: 100%;
   height: auto;
@@ -33,12 +33,10 @@ header > img {
   font-size: 26px;
 }
 
-
 :root {
   --content-general-width: 90vw;
   /* --main-card-width: calc(var(--content-general-width) / 3); */
 }
-
 
 /* Sezione Giochi in Evidenze e Ultime Notizie */
 

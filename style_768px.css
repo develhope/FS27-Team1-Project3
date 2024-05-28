@@ -1,3 +1,17 @@
+/*Responsive Navbar*/
+
+nav a {
+  margin: 0;
+}
+
+.logo-ea-navbar {
+  height: 13px;
+}
+
+.navbar-principale {
+  gap: 15px;
+}
+
 /*Responsive Header*/
 header > img {
   content: url(immagini/Banner\ 767.jpg);
