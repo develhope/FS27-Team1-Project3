@@ -1,3 +1,9 @@
+@media (max-width: 375px) {
+  .logo-ea-navbar {
+    height: 10px;
+  }
+}
+
 button:not(nav button) {
   box-sizing: border-box;
   width: var(--content-general-width);

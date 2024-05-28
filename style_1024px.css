@@ -1,3 +1,20 @@
+/*Responsive Navbar*/
+.navbar-principale button {
+  display: none;
+}
+
+.navbar-principale {
+  gap: 10px;
+}
+
+.menu-hamburgher {
+  display: flex;
+}
+
+.menu-hamburgher div {
+  display: flex;
+}
+
 /*Responsive Header*/
 header > img {
   content: url(immagini/banner\ 1023.jpg);
@@ -9,8 +26,8 @@ header > img {
   transform: scale(0.5);
 }
 
-.container-2{
-  position:absolute;
+.container-2 {
+  position: absolute;
   display: flex;
   width: 100%;
   height: auto;
