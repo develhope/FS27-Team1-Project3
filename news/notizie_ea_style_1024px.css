@@ -1,0 +1,96 @@
+:root {
+  --content-footer-width: 86vw;
+  --content-general-width: 82vw;
+
+
+}
+
+/* INIZIO Banner */
+
+header {
+  height: 28vw;
+}
+
+header img {
+  content: url(immagini_sezione_news/notizie_ea/banner_notizie_ea_1024w.jpg);
+}
+
+header h1 {
+  font-size: 37px;
+  top: 96px;
+}
+
+/* FINE Banner */
+
+/* Inizio Sezione delle notizie */
+
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.news-card h3 {
+  font-size: 1.23rem;
+}
+
+.articolo-della-news {
+  font-size: 1rem;
+}
+
+/* Fine Sezione delle notizie */
+
+/* Inizio Bottone Carica Altro */
+
+
+.carica-altro {
+  height: 100px;
+  gap: 9px;
+}
+
+.scritta-cerchio {
+  font-size: 0.95rem;
+}
+
+/* Fine Bottone Carica Altro */
+
+/* Inizio Footer */
+
+.contenuto-del-footer{
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-text {
+  gap: 10px;
+}
+
+.links-footer-alti {
+  width: 100%;
+  gap: 5px;
+}
+
+.links-footer-alti a {
+  margin: 0 27px 0 0;
+}
+
+.first {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxb {
+  width: 765px;
+  max-width: 100%;
+}
+
+.lingua {
+  width: 100%;
+}
+
+.second {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Fine Footer */

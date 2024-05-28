@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creazione Notizie</title>
+    <script src="creazione_notizie.js" defer></script>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+        gap: 50px;
+      }
+      .contenitore {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      textarea {
+        width: 300px;
+      }
+
+      #reset {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      #array-di-oggetti {
+        color: white;
+        background-color: rgb(36, 24, 50);
+        border: 2px solid rgb(196, 133, 230);
+        border-radius: 10px;
+        padding:1%
+      }
+
+      .violet {
+        color: rgb(167, 97, 233);
+      }
+
+      .pink {
+        color: rgb(232, 95, 184);
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="contenitore">
+        <div class="">
+          <input type="text" id="image-src" /> <span>src dell'immagine</span>
+        </div>
+        <div class="">
+          <input type="text" id="image-alt" /> <span>alt dell'immagine</span>
+        </div>
+        <div class="">
+          <input type="text" id="autore" /> <span>Autore</span>
+        </div>
+        <div class="">
+          <input type="text" id="data" /> <span>Data della notizia</span>
+        </div>
+        <div class="">
+          <textarea type="text" id="titolo"></textarea>
+          <span>Titolo della notizia</span>
+        </div>
+        <div class="">
+          <textarea id="didascalia"></textarea>
+          <span>Didascalia della notizia</span>
+        </div>
+        <button id="check-input" onclick="checkDati()">
+          Controlla i dati inseriti
+        </button>
+      </div>
+
+      <div class="contenitore">
+        <img src="#" alt="Percorso Sbagliato" id="check-immagine" />
+        <p id="check-alt"></p>
+        <p id="check-autore"></p>
+        <p id="check-data"></p>
+        <h3 id="check-titolo"></h3>
+        <p id="check-didascalia"></p>
+        <button id="invia-dati" onclick="inviaDati()">Invia i dati</button>
+        <button id="reset" onclick="reset()">Reset Local</button>
+      </div>
+    
+      <p id="array-di-oggetti"></p>
+      
+    </main>
+  </body>
+</html>

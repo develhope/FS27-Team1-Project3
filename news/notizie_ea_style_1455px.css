@@ -1,0 +1,53 @@
+:root {
+  --content-general-width: 85vw;
+  --content-footer-width: 77vw;
+  /* --main-card-width: calc(var(--content-general-width) / 3); */
+}
+
+/* INIZIO Header */
+
+header {
+  height: 20vw;
+}
+
+header h1 {
+  font-size: 43px;
+  top: 90px;
+}
+
+/* FINE HEADER */
+
+/* INIZIO Prefooter */
+
+.lunghezza-conditions-stripe {
+  width: var(--content-footer-width);
+}
+
+/* Fine Prefooter */
+
+/* Inizio Sezione Footer */
+
+.contenuto-del-footer {
+  width: var(--content-footer-width);
+  margin-top: 15px;
+}
+
+.ea {
+  width: 50px;
+}
+
+.links-footer-alti a {
+  font-size: 1rem;
+  margin: 16px 45px 10px 0;
+}
+
+.links-footer-bassi div {
+  width: 80%;
+}
+
+.links-footer-bassi a,
+.rights {
+  font-size: 0.875rem;
+}
+
+/* Fine Sezione Footer */

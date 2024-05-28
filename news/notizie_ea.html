@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FS27-Team1-Project3 - Notizie EA</title>
     <link rel="stylesheet" href="notizie_ea_style.css" />
+    <link
+      rel="stylesheet"
+      media="(max-width:1455px)"
+      href="notizie_ea_style_1455px.css"
+    />
+    <link
+    rel="stylesheet"
+    media="(max-width:1024px)"
+    href="notizie_ea_style_1024px.css"
+  />
+  <link
+  rel="stylesheet"
+  media="(max-width:768px)"
+  href="notizie_ea_style_768px.css"
+/>
+    <script src="notizie_ea.js" defer></script>
   </head>
   <body>
     <nav>
@@ -93,7 +109,7 @@
             (max-width: 320px) 320px, 
             (max-width: 768px) 768px, 
             (max-width: 1024px) 1024px, 
-            (max-width 1320px) 1320px, 
+            (max-width: 1320px) 1320px, 
             1456px"
         alt="banner Ultime Novità"
       />
@@ -104,9 +120,15 @@
 
     <!-- INIZIO Sezione delle Notizie -->
 
-    <article class="news"></article>
+    <article id="griglia-notizie" class="grid"></article>
 
-    <button class="carica-altro"><div class="cerchio"><div class="croce-x posizione-croce"></div><div class="croce-y posizione-croce"></div></div><p class="scritta-cerchio">CARICA ALTRO</p></button>
+    <button class="carica-altro" onclick="aggiungiNotizie()">
+      <div class="cerchio">
+        <div class="croce-x posizione-croce"></div>
+        <div class="croce-y posizione-croce"></div>
+      </div>
+      <p class="scritta-cerchio">CARICA ALTRO</p>
+    </button>
 
     <!-- FINE Sezione delle Notizie -->
 
@@ -146,53 +168,55 @@
     <!-- INIZIO prefooter -->
 
     <footer>
-      <a href=""><img class="EA" src="../immagini/EALOGO.png" alt="" /></a>
-      <div class="footer-text">
-        <div class="first">
-          <div class="links-footer-alti">
-            <a href="" class="tf">Libreria dei giochi</a>
-            <a href="" class="tf">Registrati</a>
-            <a href="" class="tf">Riscatta codice</a>
-            <a href="" class="tf">EA app </a>
-            <a href="" class="tf">Informazioni</a>
-            <a href="" class="tf">Accesibilità</a>
-            <a href="" class="tf">Aiuto</a>
-          </div>
-          <div class="boxb">
-            <button class="lingua">
-              <div class="prezzo">Prezzi per regione</div>
-              <div class="black-text">Italy</div>
-              <div class="arrow"></div>
-              <div class="arrow-sfondo"></div>
-            </button>
-            <button class="lingua">
-              <div class="prezzo">Lingua</div>
-              <div class="bottone-con-bandiera">
-                <img class="flag" src="../immagini/flag.png" alt="" />
-                <div class="black-text">Italia</div>
-              </div>
-              <div class="arrow"></div>
-              <div class="arrow-sfondo"></div>
-            </button>
-          </div>
-        </div>
-
-        <div class="second">
-          <div class="links-footer-bassi">
-            <div>
-              <a href="" class="tf">Note legali e privacy </a>
-              <a href="" class="tf">Accordo con l'utente </a>
-              <a href="" class="tf"
-                >Politica sulla privacy e sui cookie (i tuoi diritti sulla
-                privacy)</a
-              >
-              <a href="" class="tf">Aggiornamenti sui servizi online</a>
+      <div class="contenuto-del-footer">
+        <a href=""><img class="ea" src="../immagini/EALOGO.png" alt="" /></a>
+        <div class="footer-text">
+          <div class="first">
+            <div class="links-footer-alti">
+              <a href="" class="tf">Libreria dei giochi</a>
+              <a href="" class="tf">Registrati</a>
+              <a href="" class="tf">Riscatta codice</a>
+              <a href="" class="tf">EA app </a>
+              <a href="" class="tf">Informazioni</a>
+              <a href="" class="tf">Accesibilità</a>
+              <a href="" class="tf">Aiuto</a>
             </div>
-            <p class="rights">© 2024 Electronic Arts Inc.</p>
+            <div class="boxb">
+              <button class="lingua">
+                <div class="prezzo">Prezzi per regione</div>
+                <div class="black-text">Italy</div>
+                <div class="arrow"></div>
+                <div class="arrow-sfondo"></div>
+              </button>
+              <button class="lingua">
+                <div class="prezzo">Lingua</div>
+                <div class="bottone-con-bandiera">
+                  <img class="flag" src="../immagini/flag.png" alt="" />
+                  <div class="black-text">Italia</div>
+                </div>
+                <div class="arrow"></div>
+                <div class="arrow-sfondo"></div>
+              </button>
+            </div>
           </div>
-          <a href="" class="immagine-trust"
-            ><img src="../immagini/Trust.svg"
-          /></a>
+
+          <div class="second">
+            <div class="links-footer-bassi">
+              <div>
+                <a href="" class="tf">Note legali e privacy </a>
+                <a href="" class="tf">Accordo con l'utente </a>
+                <a href="" class="tf"
+                  >Politica sulla privacy e sui cookie (i tuoi diritti sulla
+                  privacy)</a
+                >
+                <a href="" class="tf">Aggiornamenti sui servizi online</a>
+              </div>
+              <p class="rights">© 2024 Electronic Arts Inc.</p>
+            </div>
+            <a href="" class="immagine-trust"
+              ><img src="../immagini/Trust.svg"
+            /></a>
+          </div>
         </div>
       </div>
     </footer>
