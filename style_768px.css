@@ -67,7 +67,6 @@ header {
   max-width: var(--content-general-width);
 }
 
-
 .news-card img,
 .articolo-della-news {
   display: none;
@@ -113,3 +112,83 @@ section a div div {
 } */
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
+
+/*INIZIO Sezione per l'iscrizione*/
+
+.gradiente-banner-standard,
+.gradiente-banner-1455px,
+.gradiente-banner-1024px,
+.gradiente-banner-640px {
+  position: relative;
+  z-index: 1;
+  place-self: center;
+  display: none;
+}
+
+.gradiente-banner-768px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: block;
+  top: 0;
+}
+
+/* banner subscribe*/
+.banner-subscribe-standard,
+.banner-subscribe-1455px,
+.banner-subscribe-1024px,
+.banner-subscribe-640px {
+  display: none;
+}
+
+.banner-subscribe-768px {
+  display: block;
+}
+
+.logo-ad-immagine {
+  top: 500px;
+}
+
+.testo-immagine-sub {
+  width: 100%;
+}
+
+.parental-control-stripe {
+  height: 197px;
+}
+
+.larghezza-parental-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.parental-control-text {
+  text-align: center;
+  font-size: 24px;
+}
+
+/*sezione condizioni*/
+.lunghezza-conditions-stripe {
+  width: 91%;
+}
+
+.dopo-linea {
+  flex-direction: column;
+}
+
+.link-list {
+  margin-top: 23px;
+  /*   border-bottom: 1px solid black;
+ */
+  padding-bottom: 23px;
+  width: 50%;
+}
+
+.socials {
+  border-top: 1px solid black;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 23px;
+  margin-bottom: 80px;
+}
+/*FINE Sezione per l'iscrizione*/

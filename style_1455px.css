@@ -49,5 +49,87 @@ h2 {
   font-size: 40px;
 }
 
-
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
+
+/*INIZIO Sezione per l'iscrizione*/
+
+/*maschere gradienti banner subscribe*/
+.gradiente-banner-standard,
+.gradiente-banner-1024px,
+.gradiente-banner-768px,
+.gradiente-banner-640px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: none;
+}
+
+.gradiente-banner-1455px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: block;
+}
+
+/* banner subscribe*/
+.banner-subscribe-standard,
+.banner-subscribe-1024px,
+.banner-subscribe-768px,
+.banner-subscribe-640px {
+  display: none;
+}
+
+.banner-subscribe-1455px {
+  display: block;
+}
+
+.logo-ad-immagine {
+  left: 8%;
+  gap: 18px;
+}
+
+.testo-immagine-sub {
+  width: 600px;
+}
+
+/*striscia azzurra*/
+.parental-control-stripe {
+  height: 96px;
+}
+
+.larghezza-parental-control {
+  padding: 0 8%;
+}
+
+.parental-control-text {
+  font-size: 23px;
+  width: 600px;
+}
+
+/*sezione condizioni*/
+.lunghezza-conditions-stripe {
+  width: 77%;
+}
+
+/*sezione link*/
+.link-list {
+  margin-top: 40px;
+}
+
+.link-list a {
+  font-size: 14px;
+}
+
+.socials {
+  margin-bottom: 45px;
+  margin-top: 40px;
+}
+.join-conversation {
+  font-size: 14px;
+}
+
+.social-icons img {
+  margin-left: 15px;
+}
+
+/*FINE Sezione per l'iscrizione*/
