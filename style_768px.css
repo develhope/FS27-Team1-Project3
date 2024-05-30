@@ -56,3 +56,193 @@ section a div div {
 } */
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
+
+footer{
+  
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px ;
+  padding-bottom:60px ;
+  margin-left: 250px;
+  margin-top: 50px;
+  transform: scale(1.2);
+}
+
+
+
+ .EA{
+   width: 64px;
+   height: auto;
+   
+}
+
+
+
+
+.tf{
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.second a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+
+.lingua{
+  width: 550px;
+  height: 51px;
+  border: 2px solid gray;
+  font-size: 16px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.prezzo{
+ 
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 10px
+}
+
+.prezzo1{
+  color: black;
+  margin-left: 10px ;
+}
+
+.prezzo2{
+  color: black;
+  margin-left: 30px ;
+}
+
+.arrow{border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 510px;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.flag{
+  height: 11px;
+  width: 16px;
+  position: absolute;
+  margin-top: 28px;
+  margin-left: 10px ;
+}
+
+
+
+.text1{
+  margin-left: 90px;
+  margin-top: 20px;
+ 
+}
+
+ .EA{
+  margin-top: -10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.second{
+display: flex;
+flex-direction: column;
+  
+}
+
+
+
+.lingua span{
+  padding-left: 10px;
+  padding-top: -30px ;
+}
+
+
+
+
+.rights{
+  padding-top: 10px;
+
+}
+
+.line{
+   
+  width: 500px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+}
+
+.lingua1{
+  display: flex;
+  flex-direction: column;
+}
+
+.uno1{
+   margin-left:-30px;
+   margin-top: 20px;
+   
+ 
+}
+.due{
+  display: flex;
+  flex-direction: column;
+}
+
+.tre{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.part2 a{
+  text-decoration: none;
+  color: black;
+  
+}
+
+.part2{margin-left: 30px;
+}
+.uno1 a{
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  
+  
+}
+
+.lingua1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  margin-left: -40px;
+}
+
+.uno1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.immagine-trust{
+  position: absolute;
+  margin-top: 280px;
+  margin-right: 350px;
+}
