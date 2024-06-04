@@ -12,3 +12,37 @@ button:not(nav button) {
 button:hover:not(nav button) {
   width: calc(var(--content-general-width) + 8px);
 }
+
+/*INIZIO Sezione per l'iscrizione*/
+
+.gradiente-banner-standard,
+.gradiente-banner-1455px,
+.gradiente-banner-1024px,
+.gradiente-banner-768px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: none;
+}
+
+.gradiente-banner-640px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: block;
+  top: 0;
+}
+
+/* banner subscribe*/
+.banner-subscribe-standard,
+.banner-subscribe-1455px,
+.banner-subscribe-1024px,
+.banner-subscribe-768px {
+  display: none;
+}
+
+.banner-subscribe-640px {
+  display: block;
+}
+
+/*FINE Sezione per l'iscrizione*/

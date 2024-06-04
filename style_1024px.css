@@ -89,3 +89,92 @@ button.details:hover {
 }
 
 /* Fine sezione Giochi in Evidenza e Ultime Notizie */
+
+/*INIZIO Sezione per l'iscrizione*/
+
+/*maschere gradienti banner subscribe*/
+.gradiente-banner-standard,
+.gradiente-banner-1455px,
+.gradiente-banner-768px,
+.gradiente-banner-640px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: none;
+}
+
+.gradiente-banner-1024px {
+  position: absolute;
+  z-index: 1;
+  place-self: center;
+  display: block;
+}
+
+/* banner subscribe*/
+.banner-subscribe-standard,
+.banner-subscribe-1455px,
+.banner-subscribe-768px,
+.banner-subscribe-640px {
+  display: none;
+}
+
+.banner-subscribe-1024px {
+  display: block;
+}
+
+.testo-immagine-sub {
+  width: 400px;
+}
+
+/* .lunghezza-conditions-stripe {
+  width: 80%;
+} */
+
+/*striscia azzurra*/
+.parental-control-stripe {
+  height: 163.781px;
+  flex-direction: column;
+}
+
+.larghezza-parental-control {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.parental-control-text {
+  font-size: 21px;
+  width: auto;
+  margin: 0;
+}
+
+.parental-control-button {
+  margin: 2px 4px;
+}
+
+/*sezione condizioni*/
+.conditions {
+  font-size: 14px;
+}
+
+/*sezione link*/
+.dopo-linea {
+  flex-wrap: wrap;
+}
+
+.socials {
+  gap: 15px;
+  align-items: flex-start;
+  width: 300px;
+  margin-top: 30px;
+}
+
+.social-icons img {
+  margin-left: 0;
+  margin-right: 14px;
+}
+.join-conversation {
+  font-size: 13px;
+}
+
+/*FINE Sezione per l'iscrizione*/
