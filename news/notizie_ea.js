@@ -136,12 +136,14 @@ function aggiungiNotizie() {
   // }
 
   const bottoneCaricaAltro = document.querySelector(".carica-altro");
-  bottoneCaricaAltro.style.marginTop = "120px";
+  bottoneCaricaAltro.style.marginTop = "60px";
+
   setTimeout(() => {
     if (indiceNotizia + notizieDaRenderizzare > oggettoNotizie.length) {
       for (let i = indiceNotizia; i < oggettoNotizie.length; i++) {
         generaCardNotizia(oggettoNotizie[i]);
       }
+      indiceNotizia = oggettoNotizie.length;
     } else {
       for (
         let i = indiceNotizia;
@@ -150,10 +152,114 @@ function aggiungiNotizie() {
       ) {
         generaCardNotizia(oggettoNotizie[i]);
       }
+      indiceNotizia += notizieDaRenderizzare;
     }
-    indiceNotizia += notizieDaRenderizzare;
-    bottoneCaricaAltro.style.marginTop = "60px";
+
+    bottoneCaricaAltro.style.marginTop = "0";
+    if (indiceNotizia === oggettoNotizie.length) {
+      bottoneCaricaAltro.style.display = "none";
+    }
   }, 1000);
 }
 
 /* Fine Bottone Carica Altro */
+
+/* Inizio Bottoni Nazioni */
+
+const grigliaFooter = document.querySelectorAll(".grid-footer");
+const contenitoreGrigliaFooter = document.querySelectorAll(".grid-footer-container")
+const bottonePrezzi = document.getElementById("bottone-prezzi");
+const grigliaPrezzi = document.getElementById("griglia-prezzi");
+const arrayLinkPrezzi = document.querySelectorAll("#griglia-prezzi a");
+
+const bottoneLingue = document.getElementById("lingue");
+const grigliaLingue = document.getElementById("griglia-lingue");
+const arrayLinkLingue = document.querySelectorAll("#griglia-lingue a");
+
+function mostraGriglia(griglia) {
+  griglia.classList.add("mostra");
+}
+
+let mouseIsOverGridPrezzi = false;
+let mouseIsOverGridLingue = false;
+
+grigliaPrezzi.addEventListener("mouseover", (event) => {
+  mouseIsOverGridPrezzi = true;
+});
+
+grigliaPrezzi.addEventListener("mouseout", (event) => {
+  mouseIsOverGridPrezzi = false;
+});
+
+grigliaLingue.addEventListener("mouseover", (event) => {
+  mouseIsOverGridLingue = true;
+});
+
+grigliaLingue.addEventListener("mouseout", (event) => {
+  mouseIsOverGridLingue = false;
+});
+
+function bottoneInFocus(bottone, griglia, arrayLink, id) {
+  bottone.addEventListener("blur", (event) => {
+    if (!mouseIsOverGridPrezzi && !mouseIsOverGridLingue) {
+      griglia.classList.remove("mostra");
+    } else {
+      event.preventDefault();
+    }
+  });
+
+  arrayLink.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      arrayLink.forEach((element) => {
+        const tic = document.querySelector(`${id} .tic`);
+        if (element.contains(tic)) {
+          element.removeChild(tic);
+        }
+      });
+      const nuovoTic = document.createElement("div");
+      nuovoTic.classList.add("tic");
+
+      link.appendChild(nuovoTic);
+
+      if (bottone === bottonePrezzi) {
+        const nazioneDelPrezzo = document.getElementById("nazione-prezzi");
+        nazioneDelPrezzo.innerHTML = link.children[0].innerHTML;
+      }
+
+      if (bottone === bottoneLingue) {
+        const linguaNazione = document.getElementById("bottone-con-bandiera");
+        linguaNazione.innerHTML = link.children[0].innerHTML;
+      }
+
+      bottone.addEventListener("blur", () => {
+        setTimeout(() => {
+          griglia.classList.remove("mostra");
+        }, 200);
+      });
+    });
+  });
+}
+
+bottoneInFocus(
+  bottonePrezzi,
+  grigliaPrezzi,
+  arrayLinkPrezzi,
+  "#griglia-prezzi"
+);
+bottoneInFocus(
+  bottoneLingue,
+  grigliaLingue,
+  arrayLinkLingue,
+  "#griglia-lingue"
+);
+
+console.log(grigliaFooter[0].getBoundingClientRect().height , contenitoreGrigliaFooter[0].getBoundingClientRect().height)
+for (let i = 0; i < grigliaFooter.length; i++) {
+  grigliaFooter[i].addEventListener("scroll", (event) => {
+    const altezzaIniziale = contenitoreGrigliaFooter[i].getBoundingClientRect().height
+    const nuovaAltezza = altezzaIniziale + grigliaFooter[i].scrollTop;
+
+    contenitoreGrigliaFooter.style.height = nuovaAltezza + "px"
+  })
+}

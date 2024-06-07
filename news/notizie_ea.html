@@ -11,15 +11,15 @@
       href="notizie_ea_style_1455px.css"
     />
     <link
-    rel="stylesheet"
-    media="(max-width:1024px)"
-    href="notizie_ea_style_1024px.css"
-  />
-  <link
-  rel="stylesheet"
-  media="(max-width:768px)"
-  href="notizie_ea_style_768px.css"
-/>
+      rel="stylesheet"
+      media="(max-width:1024px)"
+      href="notizie_ea_style_1024px.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(max-width:768px)"
+      href="notizie_ea_style_768px.css"
+    />
     <script src="notizie_ea.js" defer></script>
   </head>
   <body>
@@ -58,6 +58,12 @@
       <!-- INIZIO Navbar Principale -->
 
       <div class="navbar-principale">
+        <!--menu hamburgher-->
+        <div type="menu" class="menu-hamburgher">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <!--tre pallini-->
         <button type="menu" class="hellip">
           <div></div>
@@ -66,9 +72,12 @@
         </button>
 
         <a href="../index.html">
-          <img src="../immagini/logo_ea.svg" alt="Logo EA" />
+          <img
+            src="../immagini/logo_ea.svg"
+            alt="Logo EA"
+            class="logo-ea-navbar"
+          />
         </a>
-
         <button type="menu">
           GIOCHI <span class="freccia-nera"></span
           ><span class="freccia-sfondo"></span>
@@ -102,8 +111,8 @@
           immagini_sezione_news/notizie_ea/banner_notizie_ea_320w.jpg   320w,
           immagini_sezione_news/notizie_ea/banner_notizie_ea_768w.jpg   768w,
           immagini_sezione_news/notizie_ea/banner_notizie_ea_1024w.jpg 1024w,
-          immagini_sezione_news/notizie_ea/banner_notizie_ea_1320w.jpg 1320w,
-          immagini_sezione_news/notizie_ea/banner_notizie_ea_1456w.jpg 1456w
+          immagini_sezione_news/notizie_ea/banner_notizie_ea_1456w.jpg 1456w,
+          immagini_sezione_news/notizie_ea/banner_notizie_ea_1920w.jpg 1920w
         "
         sizes="
             (max-width: 320px) 320px, 
@@ -165,7 +174,7 @@
 
     <!-- FINE prefooter -->
 
-    <!-- INIZIO prefooter -->
+    <!-- INIZIO footer -->
 
     <footer>
       <div class="contenuto-del-footer">
@@ -182,22 +191,350 @@
               <a href="" class="tf">Aiuto</a>
             </div>
             <div class="boxb">
-              <button class="lingua">
-                <div class="prezzo">Prezzi per regione</div>
-                <div class="black-text">Italy</div>
-                <div class="arrow"></div>
-                <div class="arrow-sfondo"></div>
-              </button>
-              <button class="lingua">
-                <div class="prezzo">Lingua</div>
-                <div class="bottone-con-bandiera">
-                  <img class="flag" src="../immagini/flag.png" alt="" />
-                  <div class="black-text">Italia</div>
+              <button
+                id="bottone-prezzi"
+                class="lingua"
+                onclick="mostraGriglia(grigliaPrezzi)"
+              >
+                <div id="griglia-prezzi" class="grid-footer-container">
+                  <div class="grid-footer">
+                    <a href="#"><p>Austria</p></a>
+                    <a href="#"><p>Belgium</p></a>
+                    <a href="#"><p>Bulgaria</p></a>
+                    <a href="#"><p>Croatia</p></a>
+                    <a href="#"><p>Cyprus</p></a>
+                    <a href="#"><p>Czech Republic</p></a>
+                    <a href="#"><p>Denmark</p></a>
+                    <a href="#"><p>Estonia</p></a>
+                    <a href="#"><p>Finland</p></a>
+                    <a href="#"><p>France</p></a>
+                    <a href="#"><p>Germany</p></a>
+                    <a href="#"><p>Greece</p></a>
+                    <a href="#"><p>Hungary</p></a>
+                    <a href="#"><p>Iceland</p></a>
+                    <a href="#"><p>Ireland</p></a>
+                    <a href="#">
+                      <p>Italy</p>
+                      <div id="tic" class="tic"></div>
+                    </a>
+                    <a href="#"><p>Latvia</p></a>
+                    <a href="#"><p>Liechtenstein</p></a>
+                    <a href="#"><p>Lithuania</p></a>
+                    <a href="#"><p>Luxembourg</p></a>
+                    <a href="#"><p>Malta</p></a>
+                    <a href="#"><p>Netherlands</p></a>
+                    <a href="#"><p>Norway</p></a>
+                    <a href="#"><p>Poland</p></a>
+                    <a href="#"><p>Portugal</p></a>
+                    <a href="#"><p>Romania</p></a>
+                    <a href="#"><p>Slovakia</p></a>
+                    <a href="#"><p>Slovenia</p></a>
+                    <a href="#"><p>Spain</p></a>
+                    <a href="#"><p>Sweden</p></a>
+                    <a href="#"><p>Switzerland</p></a>
+                  </div>
+                  <div class="freccia-scrollbar-griglia">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <div class="arrow"></div>
-                <div class="arrow-sfondo"></div>
+                <div class="sfondo-bottone"></div>
+                <div class="dettagli-bottone-lingua">
+                  <div class="prezzo">Prezzi per regione</div>
+                  <div id="nazione-prezzi" class="black-text">Italy</div>
+                  <div class="arrow"></div>
+                  <div class="arrow-sfondo"></div>
+                </div>
+              </button>
+              <button
+                id="lingue"
+                class="lingua"
+                onclick="mostraGriglia(grigliaLingue)"
+              >
+                <div id="griglia-lingue" class="grid-footer-container">
+                  <div class="grid-footer">
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/usa.png"
+                          alt="USA"
+                        />
+                        <div class="black-text">United States</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/gran_bretagna.png"
+                          alt="Gran Bretagna"
+                        />
+                        <div class="black-text">United Kingdom</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/australia.png"
+                          alt="Australia"
+                        />
+                        <div class="black-text">Australia</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/francia.png"
+                          alt="Francia"
+                        />
+                        <div class="black-text">France</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/germania.png"
+                          alt="Germania"
+                        />
+                        <div class="black-text">Deutschland</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/flag.png"
+                          alt="Italia"
+                        />
+                        <div class="black-text">Italia</div>
+                      </div>
+                      <div id="tic" class="tic"></div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/giappone.png"
+                          alt="Giappone"
+                        />
+                        <div class="black-text">日本</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/polonia.png"
+                          alt="Polonia"
+                        />
+                        <div class="black-text">Polska</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/brasile.png"
+                          alt="Brasile"
+                        />
+                        <div class="black-text">Brasil</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/russia.png"
+                          alt="Russia"
+                        />
+                        <div class="black-text">Россия</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/spagna.png"
+                          alt="Spagna"
+                        />
+                        <div class="black-text">España</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/czech_republic.png"
+                          alt="Czech Republic"
+                        />
+                        <div class="black-text">Česká republika</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/canada.png"
+                          alt="Canada"
+                        />
+                        <div class="black-text">Canada (En)</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/canada.png"
+                          alt="Canada"
+                        />
+                        <div class="black-text">Canada (Fr)</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/danimarca.png"
+                          alt="Danimarca"
+                        />
+                        <div class="black-text">Danmark</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/suomi.png"
+                          alt="Suomi"
+                        />
+                        <div class="black-text">Suomi</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/messico.png"
+                          alt="Messico"
+                        />
+                        <div class="black-text">México</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/paesi_bassi.png"
+                          alt="Paesi Bassi"
+                        />
+                        <div class="black-text">Nederland</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/norvegia.png"
+                          alt="Norvegia"
+                        />
+                        <div class="black-text">Norge</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/svezia.png"
+                          alt="Svezia"
+                        />
+                        <div class="black-text">Sverige</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/cina.png"
+                          alt="Cina"
+                        />
+                        <div class="black-text">中国</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/corea.png"
+                          alt="Corea"
+                        />
+                        <div class="black-text">대한민국</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/kanji.png"
+                          alt="Kanji"
+                        />
+                        <div class="black-text">繁體中文</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/turchia.png"
+                          alt="Turchia"
+                        />
+                        <div class="black-text">Türkiye</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="freccia-scrollbar-griglia">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="sfondo-bottone"></div>
+                <div class="dettagli-bottone-lingua">
+                  <div class="prezzo">Lingua</div>
+                  <div id="bottone-con-bandiera" class="bottone-con-bandiera">
+                    <img class="flag" src="../immagini/flag.png" alt="" />
+                    <div class="black-text">Italia</div>
+                  </div>
+                  <div class="arrow"></div>
+                  <div class="arrow-sfondo"></div>
+                </div>
               </button>
             </div>
+            
           </div>
 
           <div class="second">
