@@ -1,0 +1,111 @@
+:root {
+  --content-general-width: 85vw;
+  --content-footer-width: 94vw;
+}
+
+/* INIZIO Navbar */
+
+nav a {
+  margin: 0;
+}
+
+.logo-ea-navbar {
+  height: 13px;
+}
+
+.navbar-principale {
+  gap: 15px;
+}
+
+
+/* INIZIO Header */
+
+header {
+  height: 35vw;
+}
+
+header img {
+  content: url(immagini_sezione_news/notizie_ea/banner_notizie_ea_768w.jpg);
+}
+
+header h1 {
+  font-size: 35px;
+  top: 71px
+}
+
+@media (max-width: 680px) {
+  header h1 {
+    top: 10.5vw;
+  }
+  
+}
+
+/* INIZIO Sezione delle notizie */
+
+.grid {
+  grid-template-columns: 1fr;
+}
+
+.news-card{
+  text-align: center;
+  align-items: center;
+}
+
+.news-card img {
+  display: none;
+}
+
+.autore-e-data {
+  flex-direction: column;
+  gap: 1px;
+}
+
+.articolo-della-news {
+  display: none;
+}
+
+/* FINE Sezione delle notizie */
+
+/* INIZIO Bottone Carica Altro */
+
+.carica-altro {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+
+/* INIZIO Sezione footer */
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.ea {
+  width: 45px;
+}
+
+.first {
+  gap: 32px;
+}
+
+.boxb {
+  flex-direction: column;
+  gap: 25px;
+}
+
+.links-footer-alti a {
+  margin-top: 5px;
+}
+
+.second {
+  gap: 40px;
+}
+
+.links-footer-bassi {
+  margin-top: 30px;
+}
+
+.links-footer-bassi div {
+  width: 100%;
+  gap: 15px;
+}

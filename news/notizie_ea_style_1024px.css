@@ -1,0 +1,190 @@
+:root {
+  --content-footer-width: 86vw;
+  --content-general-width: 82vw;
+}
+/* INIZIO Navbar Principale */
+.navbar-principale button {
+  display: none;
+}
+
+.navbar-principale {
+  gap: 10px;
+}
+
+.menu-hamburgher {
+  display: flex;
+}
+
+.menu-hamburgher div {
+  display: flex;
+}
+
+/* INIZIO Banner */
+
+header {
+  height: 24vw;
+}
+
+header img {
+  content: url(immagini_sezione_news/notizie_ea/banner_notizie_ea_1024w.jpg);
+}
+
+header h1 {
+  font-size: 37px;
+  top: 69px;
+}
+
+/* FINE Banner */
+
+/* Inizio Sezione delle notizie */
+
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.news-card h3 {
+  font-size: 1.23rem;
+}
+
+.articolo-della-news {
+  font-size: 1rem;
+}
+
+/* Fine Sezione delle notizie */
+
+/* Inizio Bottone Carica Altro */
+
+
+.carica-altro {
+  height: 100px;
+  gap: 9px;
+}
+
+.scritta-cerchio {
+  font-size: 0.95rem;
+}
+
+/* Fine Bottone Carica Altro */
+
+/* Inizio Footer */
+
+.contenuto-del-footer{
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-text {
+  gap: 10px;
+}
+
+.links-footer-alti {
+  width: 100%;
+  gap: 5px;
+}
+
+.links-footer-alti a {
+  margin: 0 27px 0 0;
+}
+
+.first {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxb {
+  width: 765px;
+  max-width: 100%;
+}
+
+.lingua {
+  width: 100%;
+}
+
+.second {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Fine Footer */
+
+/* Inizio Bottoni Nazioni */
+
+.grid-footer-container {
+  left: 0;
+  right: unset;
+  transform: translate(-5px, -125px);
+  z-index: 2;
+  width: 98%;
+  background-color: rgb(102, 102, 102);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 405px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 15px rgba(159, 159, 159, 0.3), -10px 10px 15px rgba(159, 159, 159, 0.3);
+  max-height: max-content;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  overflow-y: auto;
+}
+
+.dettagli-bottone-lingua {
+  z-index: 1;
+}
+
+.sfondo-bottone {
+  z-index: 0;
+}
+
+.grid-footer {
+  grid-template-rows: repeat(auto, 1fr);
+  grid-auto-flow: unset;
+  background-color: rgb(102, 102, 102);
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+  padding: 5px 25px;
+}
+
+.grid-footer a {
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+.grid-footer a:hover {
+  padding: 5px 5px;
+  background-color: rgb(238, 91, 137);
+}
+
+.grid-footer-container .black-text,
+.grid-footer p  {
+  color: white;
+  font-size: 1rem;
+}
+
+.grid-footer .flag{
+  display: none;
+}
+
+.grid-footer a:not(:nth-child(9n)):not(:last-child)::before {
+  display: none;
+}
+
+.lingua:focus .dettagli-bottone-lingua:before {
+  border-top: 2px solid var(--color-darker-grey);
+  box-shadow: none;
+}
+
+.tic {
+  background-image: url(../immagini/tick-bianco.png);
+  right: default;
+  left: -15px;
+  top: 0;
+  height: 25px;
+  width: 12px;
+}
+
+.freccia-scrollbar-griglia {
+  display: block;
+}
