@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="fc_24_notizie.css" />
+    <script src="fc_24_notizie.js" defer></script>
+    <title>FS27-Team1-TeamProject3 FC 24 news</title>
+  </head>
+  <body>
+    <nav>
+      <!--INIZIO Sticky Navbar-->
+      <aside>
+        <button type="menu" class="profilo">
+          <img
+            src="../immagini/user_ea_grigio.png"
+            alt=""
+            class="img-principale-aside"
+          /><img src="../immagini/user_ea_bianco.png" alt="" />
+        </button>
+        <button type="menu" class="aiuto">
+          <img
+            src="../immagini/aiuto_ea_grigio.png"
+            alt="punto interrogativo per aiuto"
+            class="img-principale-aside"
+          /><img
+            src="../immagini/aiuto_ea_bianco.png"
+            alt="punto iterrogativo help bianco"
+          />
+        </button>
+        <a href="index.html" class="logo-ea"
+          ><img
+            src="../immagini/logo_ea_grigio.png"
+            alt="logo ea grigio"
+            class="img-principale-aside" /><img
+            src="../immagini/logo_ea_bianco.png"
+            alt="logo ea bianco"
+        /></a>
+      </aside>
+
+      <!-- FINE Sticky Navbar -->
+
+      <!-- INIZIO Navbar Principale -->
+
+      <div class="navbar-principale">
+        <a href="../index.html">
+          <img
+            src="../immagini/fc24-logo-white.png"
+            alt="Logo EA"
+            class="logo-ea-navbar"
+          />
+        </a>
+        <div class="bottoni-menu-tendina">
+          <button type="menu">
+            Informazioni <span class="freccia-nera"></span
+            ><span class="freccia-sfondo"></span>
+          </button>
+          <button type="menu">
+            Funzionalità <span class="freccia-nera"></span
+            ><span class="freccia-sfondo"></span>
+          </button>
+          <button type="menu">
+            Ultime Team <span class="freccia-nera"></span
+            ><span class="freccia-sfondo"></span>
+          </button>
+          <button type="menu">Valutazioni FC 24</button>
+          <button type="menu">
+            Notizie e community <span class="freccia-nera"></span
+            ><span class="freccia-sfondo"></span>
+          </button>
+        </div>
+        <button class="acquista-subito">
+          Acquista Subito
+          <div class="freccia-bottone-verde">
+            <div class="freccia-nera"></div>
+            <div class="freccia-sfondo"></div>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- FINE Navbar Principale -->
+
+    <!-- INIZIO Banner-->
+
+    <header>
+      <img
+        src="immagini_sezione_news/notizie_fc_24/fc24_banner_320w.jpg"
+        alt="banner FC 24"
+        srcset="
+          immagini_sezione_news/notizie_fc_24/fc24_banner_320w.jpg   320w,
+          immagini_sezione_news/notizie_fc_24/fc24_banner_768w.jpg   768w,
+          immagini_sezione_news/notizie_fc_24/fc24_banner_1024w.jpg 1024w,
+          immagini_sezione_news/notizie_fc_24/fc24_banner_1456w.jpg 1456w,
+          immagini_sezione_news/notizie_fc_24/fc24_banner_1920w.jpg 1920w
+        "
+        sizes="
+            (max-width: 320px) 320px, 
+            (max-width: 768px) 768px, 
+            (max-width: 1024px) 1024px, 
+            (max-width: 1320px) 1320px, 
+            (max-width: 1452px) 1456px, 
+            1920w"
+      />
+      <div class="contenitore-testo-banner">
+        <h3>EA SPORTS FC™ 24</h3>
+        <h1>ULTIME NOTIZIE</h1>
+      </div>
+    </header>
+
+    <!-- FINE Banner-->
+
+    <!-- INIZIO Sezione Notizie -->
+
+    <div class="contenitore-sezione-notizie">
+      <button class="filtra-griglia">
+        <p>Filtra</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-sliders"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"
+          />
+        </svg>
+      </button>
+
+      <article id="griglia-notizie" class="grid"></article>
+    </div>
+
+    <div class="cambio-notizie">
+      <button class="indietro-avanti">Indietro</button>
+      <div class="pagine-per-scroll"></div>
+      <button class="indietro-avanti">Avanti</button>
+    </div>
+    <!-- FINE Sezione Notizie -->
+  </body>
+</html>
