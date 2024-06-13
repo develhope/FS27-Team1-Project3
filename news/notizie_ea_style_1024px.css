@@ -99,6 +99,7 @@ header h1 {
 
 .lingua {
   width: 100%;
+  z-index: unset;
 }
 
 .second {

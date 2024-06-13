@@ -89,12 +89,6 @@ function generaCardNotizia(notizia) {
   paragrafoDidascalia.classList.add("articolo-della-news");
   paragrafoDidascalia.innerHTML = notizia.didascalia;
   divNotizie.appendChild(paragrafoDidascalia);
-
-  /* Metto in display:none tutte le card da non caricare all'apertura
-  della pagina */
-  // if (oggettoNotizie.indexOf(notizia) >= 18) {
-  //   section.classList.add("nascosto");
-  // }
 }
 
 const notizieDaRenderizzare = 18;
@@ -102,9 +96,6 @@ const notizieDaRenderizzare = 18;
 for (let i = 0; i < notizieDaRenderizzare; i++) {
   generaCardNotizia(oggettoNotizie[i]);
 }
-// oggettoNotizie.forEach((notizia) => {
-//   generaCardNotizia(notizia);
-// });
 
 /* FINE Sezione delle notizie */
 
@@ -113,28 +104,6 @@ for (let i = 0; i < notizieDaRenderizzare; i++) {
 let indiceNotizia = notizieDaRenderizzare;
 
 function aggiungiNotizie() {
-  // const sections = document.querySelectorAll("section");
-  // /* trasformo la Nodelist in un array per usare i metodi */
-  // const arraySections = Array.from(sections);
-
-  // const indicePrimaNotiziaNascosta = arraySections.indexOf(
-  //   arraySections.find((section) => section.classList.contains("nascosto"))
-  // );
-
-  // if (indicePrimaNotiziaNascosta + 18 > arraySections.length) {
-  //   for (let i = indicePrimaNotiziaNascosta; i < arraySections.length; i++) {
-  //     sections[i].classList.remove("nascosto");
-  //   }
-  // } else {
-  //   for (
-  //     let i = indicePrimaNotiziaNascosta;
-  //     i < indicePrimaNotiziaNascosta + 18;
-  //     i++
-  //   ) {
-  //     sections[i].classList.remove("nascosto");
-  //   }
-  // }
-
   const bottoneCaricaAltro = document.querySelector(".carica-altro");
   bottoneCaricaAltro.style.marginTop = "60px";
 
@@ -167,7 +136,9 @@ function aggiungiNotizie() {
 /* Inizio Bottoni Nazioni */
 
 const grigliaFooter = document.querySelectorAll(".grid-footer");
-const contenitoreGrigliaFooter = document.querySelectorAll(".grid-footer-container")
+const contenitoreGrigliaFooter = document.querySelectorAll(
+  ".grid-footer-container"
+);
 const bottonePrezzi = document.getElementById("bottone-prezzi");
 const grigliaPrezzi = document.getElementById("griglia-prezzi");
 const arrayLinkPrezzi = document.querySelectorAll("#griglia-prezzi a");
@@ -176,47 +147,65 @@ const bottoneLingue = document.getElementById("lingue");
 const grigliaLingue = document.getElementById("griglia-lingue");
 const arrayLinkLingue = document.querySelectorAll("#griglia-lingue a");
 
-function mostraGriglia(griglia) {
+function mostraGriglia(bottone, griglia, arraylink, id) {
   griglia.classList.add("mostra");
+
+  bottone.addEventListener("blur", (event) => {
+    console.log("No focus");
+    setTimeout(() => {
+      griglia.classList.remove("mostra");
+    }, 0);
+  });
+
+  grigliaLingue.addEventListener("click", (event) => {
+    event.stopPropagation();
+    bottoneLingue.focus();
+  });
+
+  bottoneInFocus(bottone, arraylink, id)
 }
 
-let mouseIsOverGridPrezzi = false;
-let mouseIsOverGridLingue = false;
+// let mouseIsOverGridPrezzi = false;
+// let mouseIsOverGridLingue = false;
 
-grigliaPrezzi.addEventListener("mouseover", (event) => {
-  mouseIsOverGridPrezzi = true;
-});
+// grigliaPrezzi.addEventListener("mouseover", (event) => {
+//   mouseIsOverGridPrezzi = true;
+// });
 
-grigliaPrezzi.addEventListener("mouseout", (event) => {
-  mouseIsOverGridPrezzi = false;
-});
+// grigliaPrezzi.addEventListener("mouseout", (event) => {
+//   mouseIsOverGridPrezzi = false;
+// });
 
-grigliaLingue.addEventListener("mouseover", (event) => {
-  mouseIsOverGridLingue = true;
-});
+// grigliaLingue.addEventListener("mouseover", (event) => {
+//   mouseIsOverGridLingue = true;
+// });
 
-grigliaLingue.addEventListener("mouseout", (event) => {
-  mouseIsOverGridLingue = false;
-});
+// grigliaLingue.addEventListener("mouseout", (event) => {
+//   mouseIsOverGridLingue = false;
+// // });
 
-function bottoneInFocus(bottone, griglia, arrayLink, id) {
-  bottone.addEventListener("blur", (event) => {
-    if (!mouseIsOverGridPrezzi && !mouseIsOverGridLingue) {
-      griglia.classList.remove("mostra");
-    } else {
-      event.preventDefault();
-    }
-  });
+function bottoneInFocus(bottone, arrayLink, id) {
+  //     bottone.addEventListener("blur", (event) => {
+  //       if (!mouseIsOverGridPrezzi && !mouseIsOverGridLingue) {
+  //         griglia.classList.remove("mostra");
+  //       } else {
+  //         event.preventDefault();
+  //       }
+  //     });
 
   arrayLink.forEach((link) => {
     link.addEventListener("click", (event) => {
-      event.preventDefault();
+      event.stopPropagation();
+      event.preventDefault()
+      bottone.focus()
+
       arrayLink.forEach((element) => {
         const tic = document.querySelector(`${id} .tic`);
         if (element.contains(tic)) {
           element.removeChild(tic);
         }
       });
+      
       const nuovoTic = document.createElement("div");
       nuovoTic.classList.add("tic");
 
@@ -232,34 +221,22 @@ function bottoneInFocus(bottone, griglia, arrayLink, id) {
         linguaNazione.innerHTML = link.children[0].innerHTML;
       }
 
-      bottone.addEventListener("blur", () => {
-        setTimeout(() => {
-          griglia.classList.remove("mostra");
-        }, 200);
-      });
+      // setTimeout(() => {
+      //   bottone.blur()
+      // }, 200);
     });
   });
 }
 
-bottoneInFocus(
-  bottonePrezzi,
-  grigliaPrezzi,
-  arrayLinkPrezzi,
-  "#griglia-prezzi"
-);
-bottoneInFocus(
-  bottoneLingue,
-  grigliaLingue,
-  arrayLinkLingue,
-  "#griglia-lingue"
-);
-
-console.log(grigliaFooter[0].getBoundingClientRect().height , contenitoreGrigliaFooter[0].getBoundingClientRect().height)
-for (let i = 0; i < grigliaFooter.length; i++) {
-  grigliaFooter[i].addEventListener("scroll", (event) => {
-    const altezzaIniziale = contenitoreGrigliaFooter[i].getBoundingClientRect().height
-    const nuovaAltezza = altezzaIniziale + grigliaFooter[i].scrollTop;
-
-    contenitoreGrigliaFooter.style.height = nuovaAltezza + "px"
-  })
-}
+// bottoneInFocus(
+//   bottonePrezzi,
+//   grigliaPrezzi,
+//   arrayLinkPrezzi,
+//   "#griglia-prezzi"
+// );
+// bottoneInFocus(
+//   bottoneLingue,
+//   grigliaLingue,
+//   arrayLinkLingue,
+//   "#griglia-lingue"
+// );

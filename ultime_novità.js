@@ -12,6 +12,7 @@ const bottoneStarWars = document.getElementById(`bottone-star-wars`);
 const bottoneF1 = document.getElementById(`bottone-f1`);
 const bottoneBf = document.getElementById(`bottone-bf`);
 const bottoneNfs = document.getElementById(`bottone-nfs`);
+const bottoneMostraAltro = document.getElementById(`più-dettagli`);
 
 const arrayBottoni = document.querySelectorAll(`.menu button`);
 
@@ -461,6 +462,10 @@ function newsEaSportsFc() {
   newsText4.innerHTML = `L'aggiornamento di primavera aggiunge 86 nuovi volti e propone un'esperienza di gioco rinnovata grazie alle modifiche agli stili di gioco e alla difficoltà dell'IA della CPU a livello leggenda.`;
   newsText5.innerHTML = ``;
   newsText6.innerHTML = `L'aggiornamento delle feste (aggiornamento n°6) è vicino e non vediamo l'ora di parlarvi delle fantastiche modifiche e aggiunte a EA SPORTS FC<span><sup>TM</sup></span> 24.`;
+
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/fc_24_notizie.html";
 
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
