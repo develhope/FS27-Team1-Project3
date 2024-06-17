@@ -120,6 +120,7 @@ nav {
   position: relative;
 }
 
+
 .img1 {
   display: none;
 }
@@ -153,7 +154,7 @@ nav a {
   height: 0px;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid white;
+  border-top: 7px solid var(--font-color);
   margin-left: 4px;
   transition: transform 0.3s linear, border-top-color 0.3s linear;
 }
