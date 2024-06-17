@@ -351,7 +351,6 @@ const obj = [
   },
 ];
 
-
-function aggiuingiLocalStorage() {
-  localStorage.setItem("notizie-ea", JSON.stringify(obj))
+function aggiungiLocalStorage() {
+  localStorage.setItem("notizie-ea", JSON.stringify(obj));
 }
