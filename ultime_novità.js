@@ -12,6 +12,7 @@ const bottoneStarWars = document.getElementById(`bottone-star-wars`);
 const bottoneF1 = document.getElementById(`bottone-f1`);
 const bottoneBf = document.getElementById(`bottone-bf`);
 const bottoneNfs = document.getElementById(`bottone-nfs`);
+const bottoneMostraAltro = document.getElementById(`più-dettagli`);
 
 const arrayBottoni = document.querySelectorAll(`.menu button`);
 
@@ -462,6 +463,10 @@ function newsEaSportsFc() {
   newsText5.innerHTML = ``;
   newsText6.innerHTML = `L'aggiornamento delle feste (aggiornamento n°6) è vicino e non vediamo l'ora di parlarvi delle fantastiche modifiche e aggiunte a EA SPORTS FC<span><sup>TM</sup></span> 24.`;
 
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/fc_24_notizie.html";
+
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
   che cambia */
@@ -628,6 +633,10 @@ function newsApexLegends() {
   newsText5.innerHTML = `Mostra a tutti il tuo amore per la ALGS con questi fantastici Twitch Drop!`;
   newsText6.innerHTML = `Dal 2 al 5 maggio, segui il primo evento LAN della 4ª edizione della ALGS. Scopri di più sulle squadre, le dirette, i gironi e non solo!`;
 
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/apex_notizie.html";
+
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
   che cambia */
@@ -793,6 +802,10 @@ function newsTheSims4() {
   newsText4.innerHTML = `Acquista la collezione dei gioielli Plumbob di The Sims4 Creazioni di Cristallo Stuff Pack`;
   newsText5.innerHTML = `Un aggiornamento tra i più scintillanti`;
   newsText6.innerHTML = `Sei tu a creare The Sims con Arethabee`;
+
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/the_sims_4_notizie.html";
 
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
@@ -967,6 +980,10 @@ function newsStarWars() {
   così da rendere l'effetto hover solo la prima volta
   che cambia */
 
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/star_wars_notizie.html";
+
   if (bottoneSelezionato !== bottoneStarWars) {
     bottoneSelezionato = bottoneStarWars;
 
@@ -1128,6 +1145,10 @@ function newsF1() {
   newsText4.innerHTML = `Rivivi la stagione di quest'anno della Formula 2<span><sup>TM</sup></span> in F1® 23`;
   newsText5.innerHTML = `I Grand Prix d'Olanda e d'Italia sono gli ultimi a essere stati inclusi nell'aggiornamento delle valutazioni dei piloti di F1® 23`;
   newsText6.innerHTML = `Con questa patch di F1® 23 arrivano alcune grandi aggiunte e uno degli autraliani più amati dai fan`;
+
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/formula_1_notizie.html";
 
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
@@ -1294,6 +1315,10 @@ function newsBattlefield() {
   newsText4.innerHTML = `Il team di Battlefield si amplia mentre guardiamo al futuro della serie`;
   newsText5.innerHTML = `Piccolo hotfix successivo all'uscita dell'aggiornamento 7.0 di Battlefield 2042.`;
   newsText6.innerHTML = `Battlefield 2042, Battlefield V, EA anticheat`;
+
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/battlefield_notizie.html";
 
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta
@@ -1463,6 +1488,10 @@ function newsNFS() {
   newsText4.innerHTML = `Scalda i motori su PS4, Xbox One e PC oggi stessu e su Nintendo Switch la prossima settimana!`;
   newsText5.innerHTML = `Preparati a scoprire gli aggiornamenti di gioco in arrivo a tutta velocità in Need for Speed Hot Pursuit Remastered.`;
   newsText6.innerHTML = `Preparati ad ammirare incredibili miglioramenti grafici e a sfrecciare attraverso strabilianti ambientazioni in Need for Speed Hot Pursuit Remastered.`;
+
+  /* cambio il link relativo al pulsante più dettagli */
+
+  bottoneMostraAltro.href = "news/nfs_notizie.html";
 
   /* controllo se questo è il pulsante selezionato,
   così da rendere l'effetto hover solo la prima volta

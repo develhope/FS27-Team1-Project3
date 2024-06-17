@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FS27-Team1-Project3 - Notizie EA</title>
     <link rel="stylesheet" href="notizie_ea_style.css" />
+    <link rel="shortcut icon" type="image/png" href="../immagini/favicon-ea.png">
     <link
       rel="stylesheet"
       media="(max-width:1455px)"
@@ -194,7 +195,7 @@
               <button
                 id="bottone-prezzi"
                 class="lingua"
-                onclick="mostraGriglia(grigliaPrezzi)"
+                onclick="mostraGriglia(bottonePrezzi, grigliaPrezzi, arrayLinkPrezzi, `#griglia-prezzi`)"
               >
                 <div id="griglia-prezzi" class="grid-footer-container">
                   <div class="grid-footer">
@@ -260,7 +261,7 @@
               <button
                 id="lingue"
                 class="lingua"
-                onclick="mostraGriglia(grigliaLingue)"
+                onclick="mostraGriglia(bottoneLingue, grigliaLingue, arrayLinkLingue, `#griglia-lingue`)"
               >
                 <div id="griglia-lingue" class="grid-footer-container">
                   <div class="grid-footer">
@@ -558,6 +559,6 @@
       </div>
     </footer>
 
-    <!-- FINE prefooter -->
+    <!-- FINE Footer -->
   </body>
 </html>

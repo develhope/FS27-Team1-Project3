@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fc_24_notizie.css" />
+    <link rel="shortcut icon" type="image/png" href="../immagini/favicon-ea.png">
     <script src="fc_24_notizie.js" defer></script>
     <title>FS27-Team1-TeamProject3 FC 24 news</title>
   </head>
@@ -133,11 +134,574 @@
       <article id="griglia-notizie" class="grid"></article>
     </div>
 
-    <div class="cambio-notizie">
+    <div class="cambio-notizie" onclick="passaAlBottonePrecedente()">
       <button class="indietro-avanti">Indietro</button>
       <div class="pagine-per-scroll"></div>
-      <button class="indietro-avanti">Avanti</button>
+      <button class="indietro-avanti" onclick="passaAlBottoneSuccessivo()">
+        Avanti
+      </button>
     </div>
     <!-- FINE Sezione Notizie -->
+
+    <!-- INIZIO Prefooter -->
+
+    <form class="prefooter">
+      <div class="prefooter-prima-colonna">
+        <h2>ISCRIVITI PER RICEVERE LE NOTIZIE DI EA SPORTS FC™ 24</h2>
+        <p>
+          Hai già un Account EA?
+          <a href="#">Dai un'occhiata alle tue preferenze e-mail qui.</a>
+        </p>
+        <p>
+          Entra nel Club oggi per ricevere tramite e-mail le ultime novità, gli
+          aggiornamenti, i contenuti dietro le quinte, le offerte esclusive di
+          EA SPORTS FC™ 24 e molto altro (insieme alle novità su notizie,
+          prodotti, eventi e promozioni EA)
+        </p>
+      </div>
+      <div class="prefooter-seconda-colonna">
+        <div class="contenitore-input">
+          <button class="bottone-prefooter e-mail" type="button">
+            <p class="input-p">E-mail</p>
+            <input type="email" class="input-prefooter nascosto" />
+          </button>
+          <button class="bottone-prefooter data" type="button">
+            <p class="input-p">Data di Nascita</p>
+            <input type="date" class="input-prefooter nascosto" />
+          </button>
+
+          <button class="bottone-prefooter select" type="button">
+            <p class="input-p già-in-focus">Località</p>
+            <select
+              name="località"
+              id="località"
+              class="input-prefooter select"
+            >
+              <option value="stati-uniti">Stati Uniti</option>
+              <option value="arabia-saudita">Arabia Saudita</option>
+              <option value="argentina">Argentina</option>
+              <option value="australia">Australia</option>
+              <option value="austria">Austria</option>
+              <option value="belgio">Belgio</option>
+              <option value="brasile">Brasile</option>
+              <option value="canada">Canada</option>
+              <option value="cile">Cile</option>
+              <option value="cina">Cina</option>
+              <option value="colombia">Colombia</option>
+              <option value="corea">Corea</option>
+              <option value="danimarca">Danimarca</option>
+              <option value="emirati-arabi-uniti">Emirati Arabi Uniti</option>
+              <option value="finlandia">Finlandia</option>
+              <option value="francia">Francia</option>
+              <option value="germania">Germania</option>
+              <option value="giappone">Giappone</option>
+              <option value="grecia">Grecia</option>
+              <option value="hong-kong">Hong Kong</option>
+              <option value="india">India</option>
+              <option value="irlanda">Irlanda</option>
+              <option value="israele">Israele</option>
+              <option value="italia">Italia</option>
+              <option value="messico">Messico</option>
+              <option value="norvegia">Norvegia</option>
+              <option value="nuova-zelanda">Nuova Zelanda</option>
+              <option value="olanda">Olanda</option>
+              <option value="polonia">Polonia</option>
+              <option value="portogallo">Portogallo</option>
+              <option value="regno-unito">Regno Unito</option>
+              <option value="repubblica-ceca">Repubblica Ceca</option>
+              <option value="romania">Romania</option>
+              <option value="russia">Russia</option>
+              <option value="singapore">Singapore</option>
+              <option value="slovecchia">Slovecchia</option>
+              <option value="spagna">Spagna</option>
+              <option value="sudafrica">Sudafrica</option>
+              <option value="svezia">Svezia</option>
+              <option value="svizzera">Svizzera</option>
+              <option value="tailandia">Tailandia</option>
+              <option value="taiwan">Taiwan</option>
+              <option value="turchia">Turchia</option>
+              <option value="ucraina">Ucraina</option>
+              <option value="ungheria">Ungheria</option>
+            </select>
+          </button>
+        </div>
+
+        <div class="condizioni">
+          <input type="checkbox" />
+          <p>
+            Ho facoltà di ritirare il mio consenso in qualsiasi momento
+            modificanto le mie <a href="#">preferenze e-mail</a> nel mio account
+            EA (qualora ne abbia uno associato a questo indirizzo e-mail),
+            annullando l'iscrizione tramite l'apposito pulsante alla base di
+            ogni e-mail ricevuta o contattando il responsabile della protezione
+            dei dati di EA su
+            <a href="#">https://www.ea.com/it-it/legal/privacy-portal</a>
+          </p>
+        </div>
+        <button type="button" class="iscriviti">Iscriviti</button>
+      </div>
+    </form>
+
+    <section class="contenitore-prefooter-link">
+      <div class="prefooter-link">
+        <div class="collegamenti-ea-sports">
+          <div class="collegamenti-prima-colonna">
+            <h6>EA SPORTS FC™ 24</h6>
+            <div class="link-ea-sports">
+              <a href="#">Principale</a>
+              <a href="#">Notizie</a>
+              <a href="#">Gameplay</a>
+              <a href="#">Acquista subito</a>
+            </div>
+          </div>
+          <div class="collegamenti-seconda-colonna">
+            <p>Seguici</p>
+            <div class="link-social">
+              <a href="#"
+                ><img
+                  src="../news/immagini_sezione_news/notizie_fc_24/instagram_f_icon-icons.com_65485.png"
+                  alt="instagram"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../news/immagini_sezione_news/notizie_fc_24/YouTube_23392.png"
+                  alt="youtube"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../news/immagini_sezione_news/notizie_fc_24/tiktok_logo_icon_144802.png"
+                  alt="Tiktok"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../news/immagini_sezione_news/notizie_fc_24/twitter_x_new_logo_x_icon_256077.png"
+                  alt="Twitter"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../news/immagini_sezione_news/notizie_fc_24/FB_icon-icons.com_65484.png"
+                  alt="facebook"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="linea-bianca"></div>
+        <div class="contenitore-link-per-immagini">
+          <a href="#"
+            ><img
+              class="fc-logo-cerchio"
+              src="../news/immagini_sezione_news/notizie_fc_24/fc24-logo-footer.svg"
+              alt="FC Logo Circolare"
+          /></a>
+          <div class="contenitore-pegi">
+            <a href="#"
+              ><img
+                class="pegi"
+                src="../news/immagini_sezione_news/notizie_fc_24/pegi-3.svg"
+                alt="pegi 3"
+            /></a>
+            <div class="acquisti-in-game">
+              <img
+                class="img-carta-di-credito"
+                src="../news/immagini_sezione_news/notizie_fc_24/acquisti_in-game.svg"
+                alt=""
+              />
+              <div class="linea-corta"></div>
+              <p>Acquisti in-game (contiene elementi casuali)</p>
+            </div>
+          </div>
+        </div>
+        <p class="clausole">
+          †Si applicano condizioni e restrizioni. Consulta
+          https://www.ea.com/it-it/games/ea-sports-fc/fc-24/game-offer-and-disclaimers
+          per i dettagli.
+        </p>
+      </div>
+    </section>
+
+    <!-- FINE Prefooter -->
+
+    <footer>
+      <div class="contenuto-del-footer">
+        <a href="../index.html"><img class="ea" src="../news/immagini_sezione_news/notizie_fc_24/ea_logo_grigio.png" alt="" /></a>
+        <div class="footer-text">
+          <div class="first">
+            <div class="links-footer-alti">
+              <a href="" class="tf">Libreria dei giochi</a>
+              <a href="" class="tf">Registrati</a>
+              <a href="" class="tf">Riscatta codice</a>
+              <a href="" class="tf">EA app </a>
+              <a href="" class="tf">Informazioni</a>
+              <a href="" class="tf">Accesibilità</a>
+              <a href="" class="tf">Aiuto</a>
+            </div>
+            <div class="boxb">
+              <button
+                id="bottone-prezzi"
+                class="lingua"
+                onclick="mostraGriglia(bottonePrezzi, grigliaPrezzi, arrayLinkPrezzi, `#griglia-prezzi`)"
+              >
+                <div id="griglia-prezzi" class="grid-footer-container">
+                  <div class="grid-footer">
+                    <a href="#"><p>Austria</p></a>
+                    <a href="#"><p>Belgium</p></a>
+                    <a href="#"><p>Bulgaria</p></a>
+                    <a href="#"><p>Croatia</p></a>
+                    <a href="#"><p>Cyprus</p></a>
+                    <a href="#"><p>Czech Republic</p></a>
+                    <a href="#"><p>Denmark</p></a>
+                    <a href="#"><p>Estonia</p></a>
+                    <a href="#"><p>Finland</p></a>
+                    <a href="#"><p>France</p></a>
+                    <a href="#"><p>Germany</p></a>
+                    <a href="#"><p>Greece</p></a>
+                    <a href="#"><p>Hungary</p></a>
+                    <a href="#"><p>Iceland</p></a>
+                    <a href="#"><p>Ireland</p></a>
+                    <a href="#">
+                      <p>Italy</p>
+                      <div id="tic" class="tic"></div>
+                    </a>
+                    <a href="#"><p>Latvia</p></a>
+                    <a href="#"><p>Liechtenstein</p></a>
+                    <a href="#"><p>Lithuania</p></a>
+                    <a href="#"><p>Luxembourg</p></a>
+                    <a href="#"><p>Malta</p></a>
+                    <a href="#"><p>Netherlands</p></a>
+                    <a href="#"><p>Norway</p></a>
+                    <a href="#"><p>Poland</p></a>
+                    <a href="#"><p>Portugal</p></a>
+                    <a href="#"><p>Romania</p></a>
+                    <a href="#"><p>Slovakia</p></a>
+                    <a href="#"><p>Slovenia</p></a>
+                    <a href="#"><p>Spain</p></a>
+                    <a href="#"><p>Sweden</p></a>
+                    <a href="#"><p>Switzerland</p></a>
+                  </div>
+                  <div class="freccia-scrollbar-griglia">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="sfondo-bottone"></div>
+                <div class="dettagli-bottone-lingua">
+                  <div class="prezzo">Prezzi per regione</div>
+                  <div id="nazione-prezzi" class="black-text">Italy</div>
+                  <div class="arrow"></div>
+                  <div class="arrow-sfondo"></div>
+                </div>
+              </button>
+              <button
+                id="lingue"
+                class="lingua"
+                onclick="mostraGriglia(bottoneLingue, grigliaLingue, arrayLinkLingue, `#griglia-lingue`)"
+              >
+                <div id="griglia-lingue" class="grid-footer-container">
+                  <div class="grid-footer">
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/usa.png"
+                          alt="USA"
+                        />
+                        <div class="black-text">United States</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/gran_bretagna.png"
+                          alt="Gran Bretagna"
+                        />
+                        <div class="black-text">United Kingdom</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/australia.png"
+                          alt="Australia"
+                        />
+                        <div class="black-text">Australia</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/francia.png"
+                          alt="Francia"
+                        />
+                        <div class="black-text">France</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/germania.png"
+                          alt="Germania"
+                        />
+                        <div class="black-text">Deutschland</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/flag.png"
+                          alt="Italia"
+                        />
+                        <div class="black-text">Italia</div>
+                      </div>
+                      <div id="tic" class="tic"></div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/giappone.png"
+                          alt="Giappone"
+                        />
+                        <div class="black-text">日本</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/polonia.png"
+                          alt="Polonia"
+                        />
+                        <div class="black-text">Polska</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/brasile.png"
+                          alt="Brasile"
+                        />
+                        <div class="black-text">Brasil</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/russia.png"
+                          alt="Russia"
+                        />
+                        <div class="black-text">Россия</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/spagna.png"
+                          alt="Spagna"
+                        />
+                        <div class="black-text">España</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/czech_republic.png"
+                          alt="Czech Republic"
+                        />
+                        <div class="black-text">Česká republika</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/canada.png"
+                          alt="Canada"
+                        />
+                        <div class="black-text">Canada (En)</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/canada.png"
+                          alt="Canada"
+                        />
+                        <div class="black-text">Canada (Fr)</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/danimarca.png"
+                          alt="Danimarca"
+                        />
+                        <div class="black-text">Danmark</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/suomi.png"
+                          alt="Suomi"
+                        />
+                        <div class="black-text">Suomi</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/messico.png"
+                          alt="Messico"
+                        />
+                        <div class="black-text">México</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/paesi_bassi.png"
+                          alt="Paesi Bassi"
+                        />
+                        <div class="black-text">Nederland</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/norvegia.png"
+                          alt="Norvegia"
+                        />
+                        <div class="black-text">Norge</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/svezia.png"
+                          alt="Svezia"
+                        />
+                        <div class="black-text">Sverige</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/cina.png"
+                          alt="Cina"
+                        />
+                        <div class="black-text">中国</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/corea.png"
+                          alt="Corea"
+                        />
+                        <div class="black-text">대한민국</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/kanji.png"
+                          alt="Kanji"
+                        />
+                        <div class="black-text">繁體中文</div>
+                      </div>
+                    </a>
+                    <a href="#">
+                      <div class="bottone-con-bandiera">
+                        <img
+                          class="flag"
+                          src="../immagini/bandiere/turchia.png"
+                          alt="Turchia"
+                        />
+                        <div class="black-text">Türkiye</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="freccia-scrollbar-griglia">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="sfondo-bottone"></div>
+                <div class="dettagli-bottone-lingua">
+                  <div class="prezzo">Lingua</div>
+                  <div id="bottone-con-bandiera" class="bottone-con-bandiera">
+                    <img class="flag" src="../immagini/flag.png" alt="" />
+                    <div class="black-text">Italia</div>
+                  </div>
+                  <div class="arrow"></div>
+                  <div class="arrow-sfondo"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="second">
+            <div class="links-footer-bassi">
+              <div>
+                <a href="" class="tf">Note legali e privacy </a>
+                <a href="" class="tf">Accordo con l'utente </a>
+                <a href="" class="tf"
+                  >Politica sulla privacy e sui cookie (i tuoi diritti sulla
+                  privacy)</a
+                >
+                <a href="" class="tf">Aggiornamenti sui servizi online</a>
+              </div>
+              <p class="rights">© 2024 Electronic Arts Inc.</p>
+            </div>
+            <a href="" class="immagine-trust"
+              ><img src="../immagini/Trust.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FINE prefooter -->
   </body>
 </html>
