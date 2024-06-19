@@ -132,3 +132,99 @@ function aggiungiNotizie() {
 }
 
 /* Fine Bottone Carica Altro */
+
+/* Inizio Bottoni Nazioni */
+
+const grigliaFooter = document.querySelectorAll(".grid-footer");
+const contenitoreGrigliaFooter = document.querySelectorAll(
+  ".grid-footer-container"
+);
+const bottonePrezzi = document.getElementById("bottone-prezzi");
+const grigliaPrezzi = document.getElementById("griglia-prezzi");
+const arrayLinkPrezzi = document.querySelectorAll("#griglia-prezzi a");
+
+const bottoneLingue = document.getElementById("lingue");
+const grigliaLingue = document.getElementById("griglia-lingue");
+const arrayLinkLingue = document.querySelectorAll("#griglia-lingue a");
+
+function mostraGriglia(bottone, griglia, arraylink, id) {
+  griglia.classList.add("mostra");
+
+  bottone.addEventListener("blur", (event) => {
+    console.log("No focus");
+    setTimeout(() => {
+      griglia.classList.remove("mostra");
+    }, 0);
+  });
+
+  grigliaLingue.addEventListener("click", (event) => {
+    event.stopPropagation();
+    bottoneLingue.focus();
+  });
+
+  bottoneInFocus(bottone, arraylink, id)
+}
+
+// let mouseIsOverGridPrezzi = false;
+// let mouseIsOverGridLingue = false;
+
+// grigliaPrezzi.addEventListener("mouseover", (event) => {
+//   mouseIsOverGridPrezzi = true;
+// });
+
+// grigliaPrezzi.addEventListener("mouseout", (event) => {
+//   mouseIsOverGridPrezzi = false;
+// });
+
+// grigliaLingue.addEventListener("mouseover", (event) => {
+//   mouseIsOverGridLingue = true;
+// });
+
+// grigliaLingue.addEventListener("mouseout", (event) => {
+//   mouseIsOverGridLingue = false;
+// // });
+
+function bottoneInFocus(bottone, arrayLink, id) {
+  //     bottone.addEventListener("blur", (event) => {
+  //       if (!mouseIsOverGridPrezzi && !mouseIsOverGridLingue) {
+  //         griglia.classList.remove("mostra");
+  //       } else {
+  //         event.preventDefault();
+  //       }
+  //     });
+
+  arrayLink.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault()
+      bottone.focus()
+
+      arrayLink.forEach((element) => {
+        const tic = document.querySelector(`${id} .tic`);
+        if (element.contains(tic)) {
+          element.removeChild(tic);
+        }
+      });
+      
+      const nuovoTic = document.createElement("div");
+      nuovoTic.classList.add("tic");
+
+      link.appendChild(nuovoTic);
+
+      if (bottone === bottonePrezzi) {
+        const nazioneDelPrezzo = document.getElementById("nazione-prezzi");
+        nazioneDelPrezzo.innerHTML = link.children[0].innerHTML;
+      }
+
+      if (bottone === bottoneLingue) {
+        const linguaNazione = document.getElementById("bottone-con-bandiera");
+        linguaNazione.innerHTML = link.children[0].innerHTML;
+      }
+
+      // setTimeout(() => {
+      //   bottone.blur()
+      // }, 200);
+    });
+  });
+}
+

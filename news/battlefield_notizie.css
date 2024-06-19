@@ -45,6 +45,7 @@
   --ea-light-color: #f3f3f3;
   --color-darker-grey:rgb(199, 199, 199);
   --color-circle-grey: rgb(178, 178, 178);
+  --bg-footer: #161616;
 }
 
 * {
@@ -478,3 +479,611 @@ nav {
 }
 
 /* Fine Bottone Carica Altro */
+
+/* INIZIO prefooter */
+.prefooter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: var(--content-general-width);
+  margin-top: 120px;
+  gap: 30px;
+  color: var(--ea-light-color);
+  font-family: var(--font-ea);
+  font-size: 1.05rem;
+}
+
+.prefooter h2 {
+  font-size: 3.3rem;
+  font-family: var(--font-ea);
+}
+
+.prefooter a {
+  color: var(--color-orange);
+}
+
+.prefooter-prima-colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.prefooter-seconda-colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.contenitore-input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "e-mail e-mail"
+  "data luogo";
+  gap: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.bottone-prefooter {
+  border: none;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  height: 60px;
+  gap: 5px;
+}
+
+.input-prefooter {
+  border: none;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  font-size: 1.05rem;
+}
+
+.e-mail {
+  grid-area: e-mail;
+}
+
+.data {
+  grid-area: data;
+  border: none;
+}
+
+.select {
+  grid-area: luogo;
+}
+
+.input-p {
+  font-size: 1.10rem;
+  color: rgb(82, 82, 82);
+}
+
+.già-in-focus {
+  font-size: 0.80rem;
+  color: grey;
+  margin-left: 4px;
+}
+
+.bottone-prefooter:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid white;
+  transition: 0.05s linear;
+}
+
+.iscriviti:hover::before,
+.bottone-prefooter:hover:before {
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+}
+
+.input-data-luogo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nascosto {
+  display: none;
+}
+
+.condizioni {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.condizioni input {
+  margin-top: 5px;
+}
+
+.iscriviti {
+  width: 130px;
+  height: 50px;
+  color: rgb(220, 220, 220);
+  background-color: transparent;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.10rem;
+  position: relative;
+}
+
+.iscriviti::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-orange);
+  border-radius: 5px;
+  z-index: -1;
+  transition: 0.05s linear;
+}
+
+.contenitore-prefooter-link {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(37, 37, 37);
+  margin-top: 120px;
+  padding: 60px 0;
+  font-size: 1.10rem;
+}
+
+
+.prefooter-link {
+  display: flex;
+  flex-direction: column;
+  width: var(--content-general-width);
+  font-family: var(--font-ea);
+  gap: 30px;
+}
+
+.prefooter-link,
+.prefooter-link a {
+  color: rgb(144, 144, 144);
+  text-decoration: none;
+}
+
+.collegamenti-ea-sports {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collegamenti-prima-colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.collegamenti-prima-colonna h6 {
+  color: var(--ea-light-color);
+  font-size: 1.10rem;
+}
+
+.link-ea-sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  font-size: 1rem;
+}
+
+.link-ea-sports a:hover {
+  color: var(--color-orange);
+}
+
+.collegamenti-seconda-colonna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.collegamenti-seconda-colonna p {
+  color: var(--ea-light-color);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.link-social {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.link-social a {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-social a img {
+  height: 25px;
+  transition: height 0.1s linear;
+}
+
+.link-social a:hover img{
+  height: 30px;
+}
+
+.linea-bianca {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(144, 144, 144);
+  margin-top: 25px;
+}
+
+.contenitore-link-per-immagini {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenitore-loghi-prefooter {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.fc-logo-cerchio,
+.pegi {
+  height: 70px;
+}
+
+.contenitore-pegi {
+  display: flex;
+  gap: 10px;
+}
+
+.acquisti-in-game {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 0.7rem;
+}
+
+.img-carta-di-credito {
+  height: 57px;
+}
+
+.linea-corta {
+  height: 2px;
+  background-color: var(--ea-light-color);
+  width: 100%;
+}
+
+.clausole {
+  width: 65%;
+  font-size: 0.8rem;
+  margin-top: 30px;
+}
+
+/* FINE Prefooter */
+
+/* Inizio Sezione Footer */
+
+footer {
+  width: 100%;
+  background-color: var(--bg-footer);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+  padding-top: 25px;
+}
+
+.contenuto-del-footer{
+  font-family: var(--font-ea);
+  display: flex;
+  gap: 30px;
+  width: var(--content-general-width);
+  position: relative;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-footer-alti {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+.links-footer-bassi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.boxb{
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+}
+
+.black-text{
+  color: white;
+}
+
+
+.arrow {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 8px solid white;
+  border-radius: 10px;
+  right: 20px;
+  bottom: 14px;
+}
+
+.arrow-sfondo {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid var(--bg-footer);
+  right: 20px;
+  bottom: 17px;
+}
+
+.bottone-con-bandiera {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.flag{
+  height: 11px;
+  width: 16px;
+  
+}
+
+.lingua{
+  width: 185px;
+  height: 65px;
+  border: none;
+  font-size: 15px;
+  background-color: var(--bg-footer);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  color: gray;
+}
+
+.dettagli-bottone-lingua {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  z-index: 3;
+  
+}
+
+.sfondo-bottone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg-footer);
+  z-index: 2;
+  transition: top, right, bottom, left 0.08s linear;
+}
+
+.lingua:hover .sfondo-bottone{
+  top: -2px;
+  right: -4px;
+  bottom: -2px;
+  left: -4px;
+}
+
+.lingua:focus .sfondo-bottone {
+  top: -2px;
+  right: -4px;
+  bottom: -2px;
+  left: -4px;
+}
+
+.dettagli-bottone-lingua::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid rgb(135, 135, 135);
+  border-radius: 3px;
+  transition: top, right, bottom, left 0.08s linear;
+  z-index: 4;
+}
+
+.dettagli-bottone-lingua:hover::before {
+  top: -2px;
+  right: -4px;
+  bottom: -2px;
+  left: -4px;
+}
+
+.ea{
+  width: 64px;
+  height: auto;
+}
+
+.tf{
+  color: rgb(152, 152, 152);
+  text-decoration: none;
+}
+
+.second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.links-footer-alti a {
+  font-size: 1.05rem;
+  margin: 16px 52px 16px 0;
+}
+
+.links-footer-bassi div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 70%;
+}
+
+.links-footer-bassi a {
+  font-size: 0.9rem;
+  margin-right: 15px;
+}
+
+.lingua:focus .arrow {
+  transform: scaleY(-1);
+}
+
+.lingua:focus .arrow-sfondo {
+    transform: translateY(7px) scaleY(-1);
+}
+
+.lingua:focus .dettagli-bottone-lingua:before {
+  top: -2px;
+  right: -4px;
+  bottom: -2px;
+  left: -4px;
+  border-top: none;
+  box-shadow: 10px 10px 15px rgba(4, 4, 4, 0.3), -10px 10px 15px rgba(4, 4, 4, 0.3);
+}
+
+.rights {
+  color: rgb(152, 152, 152);
+  font-size: 0.9rem;
+}
+
+/* FINE Sezione Footer */
+
+/* INIZIO Bottoni Footer a scomparsa */
+
+.grid-footer-container {
+  border: 2px solid rgb(135, 135, 135);
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 0;
+  right: -25px;
+  transform: translateY(-100%);
+  background-color: var(--bg-footer);
+  z-index: 1;
+  position: absolute;
+}
+
+.grid-footer-container:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 21px;
+  width: 189px;
+  height: 2px;
+  background-color: var(--bg-footer);
+}
+
+.grid-footer {
+  background-color: var(--bg-footer);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  grid-auto-flow: column;
+  padding: 15px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 10px 10px 15px rgba(4, 4, 4, 0.3), -10px 10px 15px rgba(4, 4, 4, 0.3);
+}
+
+.grid-footer a {
+  box-sizing:border-box;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  text-align: start;
+  text-wrap: nowrap;
+  padding: 19px 45px 19px 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.grid-footer a:hover {
+  padding: 19px 35px 19px 30px;
+}
+
+.grid-footer a:not(:nth-child(9n)):not(:last-child)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  height: 2px;
+  width: 82%;
+  background-color: rgb(234, 234, 234);
+}
+
+.tic {
+  background-image: url(../immagini/tick-bianco.png);
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 30px;
+  position: absolute;
+  right: 23px;
+  top: 25%;
+}
+
+.mostra {
+  display: flex;
+}
+
+.freccia-scrollbar-griglia {
+  color: white;
+  display: none;
+}
+
+/* FINE Bottoni Footer a scomparsa */
