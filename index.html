@@ -14,6 +14,23 @@
     <script src="navbar.js" defer></script>
   </head>
   <body>
+
+
+    <div id="sidebar-container">
+      <div id="sidebar-content">
+        <button id="titolo-sidebar" class="titolo-sidebar-btn">Tutti i giochi</button>
+        <button id="close-sidebar" class="close-sidebar-btn">&times;</button>
+        <div id="griglia-img-link">
+          <a id="principale-grid" href=""><img src="immagini/img aside1.png" alt="logo ea play con sfondo viola"><img id="scritta-ea" src="immagini/ea-play-mono-logo-svg.svg"></a>
+          <a id="fc24-aside" href=""><img src="immagini/img aside 2.jpg" alt="copertina fifa23"><img id="scritta-fifa" src="immagini/fifa23-logo-white-stacked.svg"></a>
+          <a id="f1-aside" href=""><img src="immagini/img aside 3.png" alt="copertina f1 22"><img id="scritta-f1" src="immagini/f122-gamebox-logo.png"></a></a>
+          <a id="madden-aside" href=""><img src="immagini/img aside 4.jpg" alt="copertina madden 23"><img id="scritta-madden" src="immagini/m23-gamebox-logo.svg"></a></a>
+          <a id="apex-aside" href=""><img src="immagini/img aside 5.jpg" alt="copertina apex legends"><img id="scritta-apex" src="immagini/apex-legends-mono-logo.svg"></a></a>
+          <a id="battlefield-aside" href=""><img src="immagini/img aside 6.jpg" alt="copertina battlefield"><img id="scritta-battlefield" src="immagini/battlefield-2042-mono-logo-svg.svg"></a></a>
+          <a id="thesims-aside" href=""><img src="immagini/img aside 7.jpg" alt="copertina the sims 4"><img id="scritta-thesims" src="immagini/the-sims-4-mono-logo.png"></a></a>
+        </div>
+      </div>
+    </div>
     
     <nav id="nav">
     <!--Sticky-->
@@ -39,26 +56,28 @@
           <div></div>
         </button>
 
+       
+ 
+
         <a href="index.html">
           <img src="immagini/logo_ea.svg" alt="Logo EA" class="logo-ea-navbar" />
         </a>
-        <button type="menu">
-          GIOCHI <span class="freccia-nera"></span
-          ><span class="freccia-sfondo"></span>
+        <button type="menu" id="giochi-btn">
+          GIOCHI <span class="freccia-nera"></span><span class="freccia-sfondo"></span>
         </button>
-        <button type="menu">
+        <button type="menu" id="esperienze-btn">
           ESPERIENZE <span class="freccia-nera"></span
           ><span class="freccia-sfondo"></span>
         </button>
-        <button type="menu">
+        <button type="menu" id="info-btn">
           INFORMAZIONI <span class="freccia-nera"></span
           ><span class="freccia-sfondo"></span>
         </button>
-        <button type="menu">
+        <button type="menu" id="impegni-btn">
           IMPEGNI <span class="freccia-nera"></span
           ><span class="freccia-sfondo"></span>
         </button>
-        <button type="menu">
+        <button type="menu" id="risorse-btn">
           RISORSE <span class="freccia-nera"></span
           ><span class="freccia-sfondo"></span>
         </button>
