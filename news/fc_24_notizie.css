@@ -634,6 +634,10 @@ header img {
   font-size: 1.10rem;
 }
 
+.link-ea-sports a:hover {
+  color: var(--color-green);
+}
+
 .collegamenti-seconda-colonna {
   display: flex;
   flex-direction: column;
