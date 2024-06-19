@@ -59,6 +59,9 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: var(--font-ea);
+  background-image: url(immagini_sezione_news/notizie_f1/background_f1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* FINE CODICI GENERICI DELLA PAGINA */
@@ -250,3 +253,252 @@ nav a {
 }
 
 /* FINE NAVBAR PRINCIPALE */
+
+/* INIZIO BANNER */
+
+header {
+  position: relative;
+  margin-top: 95px;
+  width: 100vw;
+  overflow: hidden;
+  height: 350px;
+}
+
+header img {
+  width: 100vw;
+  position: absolute;
+  bottom: -150px;
+}
+
+.titolo-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 35%;
+  color: white;
+}
+
+.nome-banner {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.nome-banner .marchio {
+  font-size: 2.9rem;
+  font-family: var(--font-ea);
+  transform: translateY(-7px)
+}
+
+.numero-nome {
+  margin-left: 3px;
+}
+
+header h1 {
+  font-family: var(--font-apex);
+  font-size: 3rem;
+}
+
+/* INIZIO Sezione delle notizie */
+
+.striscia-trasparente {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 100vw;
+  border-bottom: 2px solid rgb(222, 222, 222);
+}
+
+.contenitore-bottoni-filtro {
+  width: var(--content-general-width);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contenitore-bottoni-filtro button {
+  font-family: var(--font-ea);
+  color: rgb(148, 147, 147);
+  font-size: 1rem;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  padding: 20px 10px;
+}
+
+.striscia-gialla-bottoni {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: var(--color-yellow);
+  display: none;
+}
+
+.contenitore-bottoni-filtro button:hover {
+  color: rgb(50, 50, 50);
+}
+
+.contenitore-bottoni-filtro button:focus {
+  color: rgb(50, 50, 50);
+}
+
+.contenitore-bottoni-filtro button:focus .striscia-gialla-bottoni{
+  display: block;
+}
+
+.contenitore-bottoni-filtro button:hover .striscia-gialla-bottoni{
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  width: var(--content-general-width);
+  color: var(--color-black);
+  margin-top: 65px;
+  margin-bottom: 60px;
+}
+
+.news-card {
+  background-color: #1C1B1B;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.news-info {
+  font-size: 14px;
+  font-family: var(--font-apex);
+}
+
+.yellow {
+  color: var(--color-yellow);
+}
+
+.black {
+  color: var(--color-black);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: rgb(220, 220, 220);
+}
+
+.news-card a > div {
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.autore-e-data {
+  display: flex;
+  gap: 15px;
+}
+
+.news-card h3 {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-size: 23px;
+  font-family: var(--font-apex-bold);
+}
+
+.articolo-della-news {
+  font-size: var(--regular-font-size);
+}
+
+
+/* Fine sezione delle notizie */
+
+/* Inizio Bottone Carica Altro */
+
+.carica-altro {
+  width: var(--content-general-width);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border: 2px solid var(--color-grey);
+  gap: 12px;
+  transition: margin-top 0.3s ease-out;
+}
+
+.cerchio {
+  width: 37px;
+  height: 37px;
+  border: 2px solid var(--color-circle-grey);
+  border-radius: 50%;
+  position: relative;
+  margin: 3px;
+  transition: width 0.1s linear, height 0.1s linear, margin 0.1s linear;
+}
+
+.posizione-croce {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(116, 116, 116);
+}
+
+.croce-x {
+  width: 11px;
+  height: 1px;
+}
+
+.croce-y {
+  width: 1px;
+  height: 11px;
+}
+
+.scritta-cerchio {
+  font-size: 22px;
+  font-family: var(--font-ea-bold);
+  color: var(--color-circle-grey);
+}
+
+.carica-altro:hover {
+  border-color: rgb(145, 145, 145);
+  gap: 12px
+}
+
+.carica-altro:hover .scritta-cerchio {
+  color: var(--color-black);
+}
+
+.carica-altro:hover .posizione-croce {
+  background-color: var(--color-black);
+}
+
+.carica-altro:hover .cerchio {
+  border-color: var(--color-black);
+  height: 43px;
+  width: 43px;
+  margin: 0;
+}
+
+.carica-altro:hover .croce-x {
+  width: 14px;
+  height: 2px;
+}
+
+.carica-altro:hover .croce-y {
+  width: 2px;
+  height: 14px;
+}
+
+/* Fine Bottone Carica Altro */

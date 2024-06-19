@@ -35,10 +35,12 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background-image: url(immagini_sezione_news/notizie_star_wars/background_star_wars.png);
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-size: 100vh;
+  background-attachment: fixed;
 }
 
 /*Aside */
@@ -212,3 +214,105 @@ nav a {
 }
 
 /* FINE NAVBAR */
+
+/* INIZIO BANNER */
+
+header {
+  display: flex;
+  align-items: center;
+  height: 650px;
+  width: var(--content-general-width);
+  color: white;
+  margin-top: 95px;
+}
+
+.titolo-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-family: var(--font-ea-bold);
+}
+
+header h3 {
+  font-family: var(--font-ea);
+  font-size: 2rem;
+  width: 60%;
+}
+
+.linea-bianca-banner {
+  height: 7px;
+  width: 30%;
+  background-color: white;
+}
+
+/* INIZIO Sezione delle notizie */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  width: var(--content-general-width);
+  color: var(--color-black);
+  margin-top: 65px;
+  margin-bottom: 60px;
+}
+
+.news-card {
+  background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.news-info {
+  font-size: 14px;
+  font-family: var(--font-ea-bold);
+}
+
+.gold {
+  color: var(--color-gold);
+}
+
+.black {
+  color: var(--color-black);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+}
+
+.news-card a > div {
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.autore-e-data {
+  display: flex;
+  gap: 15px;
+}
+
+.news-card h3 {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-size: 23px;
+  font-family: var(--font-ea-bold);
+}
+
+.articolo-della-news {
+  font-size: 1rem;
+}
+
+/* Fine sezione delle notizie */
