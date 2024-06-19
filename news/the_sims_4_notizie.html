@@ -9,7 +9,7 @@
       type="image/png"
       href="../immagini/favicon-ea.png"
     />
-    <script src="the_sims_4_notizie.js"></script>
+    <script src="the_sims_4_notizie.js" defer></script>
     <title>FS27-Team1-TeamProject3 The Sims 4 news</title>
   </head>
 
@@ -93,5 +93,234 @@
         </button>
       </div>
     </nav>
+
+    <!-- INIZIO Banner-->
+
+    <header>
+      <button>
+        <div class="bordo-blu"></div>
+        <div class="kit">
+          <p>Ecco i nuovi kit!</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </div>
+        <div class="linea-grigia-bottone"></div>
+        <div class="croce">
+          <p>X</p>
+        </div>
+      </button>
+      <div class="banner">
+        <div class="titolo">
+          <h1>Notizie e Aggiornamenti</h1>
+        </div>
+        <img
+          src="immagini_sezione_news/notizie_the_sims_4/banner_the_sims_4.avif"
+          alt=""
+        />
+      </div>
+    </header>
+
+    <!-- Inizio Notizie-->
+
+    <article id="griglia-notizie" class="grid"></article>
+
+    <!-- Inizio Prefooter-->
+
+    <div class="contenitore-prefooter">
+      <div class="prefooter">
+        <div class="riga-uno">
+          <div class="link-social">
+            <div class="prefooter-cerchio">
+              <img
+                src="immagini_sezione_news/notizie_the_sims_4/facebook_icon_137647.svg"
+                alt="facebook"
+              />
+            </div>
+            <div class="prefooter-cerchio">
+              <img
+                src="immagini_sezione_news/notizie_the_sims_4/twitter_x_new_logo_x_icon_256077.svg"
+                alt="twitter"
+              />
+            </div>
+            <div class="prefooter-cerchio">
+              <img
+                src="immagini_sezione_news/notizie_the_sims_4/instagram_f_icon-icons.com_65485.svg"
+                alt="instagram"
+              />
+            </div>
+            <div class="prefooter-cerchio">
+              <img
+                src="immagini_sezione_news/notizie_the_sims_4/YOUTUBE_icon-icons.com_65487.svg"
+                alt="youtube"
+              />
+            </div>
+          </div>
+          <div class="contenitore-bottoni-prefooter">
+            <button class="bottoni-prefooter">
+              <p>Lingua</p>
+              <select name="lingua" id="lingua">
+                <optgroup label="Lingua">
+                  <option value="english">English</option>
+                  <option value="francais">Français</option>
+                  <option value="deutsche">Deutsche</option>
+                  <option value="italiano" selected>Italiano</option>
+                </optgroup>
+              </select>
+            </button>
+            <button class="bottoni-prefooter">
+              <p>Prezzo Regionale</p>
+              <select name="prezzo" id="prezzo">
+                <optgroup label="Lingua">
+                  <option value="inghilterra">Inghilterra</option>
+                  <option value="francia">Francia</option>
+                  <option value="germania">Germania</option>
+                  <option value="italia" selected>Italia</option>
+                </optgroup>
+              </select>
+            </button>
+            <button class="indietro">
+              <p>Torna all'inizio</p>
+              <i
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-arrow-up-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
+                  />
+                </svg>
+              </i>
+            </button>
+          </div>
+        </div>
+        <div class="linea-grigia"></div>
+        <div class="riga-due">
+          <div class="sezione-loghi">
+            <a href="#"
+              ><img
+                src="immagini_sezione_news/notizie_the_sims_4/Electronic-Arts-Logo-black.png"
+                alt="EA"
+                class="logo-ea"
+            /></a>
+            <a href="#"
+              ><img
+                src="immagini_sezione_news/notizie_the_sims_4/maxis_logo.png"
+                alt="Maxis"
+                class="maxis"
+            /></a>
+            <a href="#"
+              ><img
+                src="immagini_sezione_news/notizie_the_sims_4/Sims_diamond_logo-black.svg"
+                alt="The Sims 4"
+                class="prefooter-logo"
+            /></a>
+          </div>
+          <div class="pegi">
+            <a href="#"
+              ><img
+                src="immagini_sezione_news/notizie_the_sims_4/pegi_12.svg"
+                alt="pegi 12"
+                class="pegi-12"
+            /></a>
+            <div class="avvertenze">
+              <a href="#"
+                ><img
+                  src="immagini_sezione_news/notizie_the_sims_4/sesso.svg"
+                  alt="sesso"
+              /></a>
+              <a href="#"
+                ><img
+                  src="immagini_sezione_news/notizie_apex/violenza.svg"
+                  alt="violenza"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="linea-grigia"></div>
+        <div class="riga-tre">
+          <a href="#">Principale</a>
+          <div class="riga-verticale nera"></div>
+          <a href="#">Negozio</a>
+          <div class="riga-verticale nera"></div>
+          <a href="#">Info</a>
+          <div class="riga-verticale nera"></div>
+          <a href="#">EA app per Windows</a>
+          <div class="riga-verticale nera"></div>
+          <a href="#">EA app e Origin per Mac</a>
+          <div class="riga-verticale nera"></div>
+          <a href="#">Libreria dei Giochi</a>
+        </div>
+        <div class="linea-grigia"></div>
+        <p class="contenuti-aggiuntivi">
+          * I contenuti aggiuntivi richiedono un acquisto separato e tutti gli
+          aggiornamenti del gioco base. Potrebbero essere richiesti un account
+          per la relativa piattaforma, una connessione a Internet e un account
+          EA. Si applicano restrizioni di età. ** Le offerte potranno variare o
+          subire modifiche. Visita il sito del rivenditore per i dettagli.
+          Richiede The Sims 4 e tutti gli aggiornamenti. Per PC, consulta i
+          requisiti minimi di sistema per il pacchetto.
+        </p>
+      </div>
+    </div>
+
+    <!-- INIZIO footer-->
+
+    <footer>
+      <div class="contenuto-footer">
+        <div class="link-footer">
+          <a href="#">Aiuto</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Note Legali</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Accordo con l'utente</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Politica sulla privacy e sui cookie</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Condizioni di vendita</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Garanzia Grandi Giochi</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Informazioni aziendali</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Aggiornamenti servizi online</a>
+          <div class="riga-verticale bianca"></div>
+          <a href="#">Sicurezza</a>
+        </div>
+        <div class="linea-grigia"></div>
+        <div class="contatti-footer">
+          <p>
+            Venditore: EA Swiss Sàrl, Place du Molard 8, CAP 1204, Ginevra,
+            Svizzera. Registrata presso il registro delle imprese di Ginevra con
+            il numero: CH-660-2328005-8. E-mail: contact_eahelp@ea.com
+          </p>
+          <p>
+            Tutti i prodotti digitali venduti in determinati territori (consulta
+            le Condizioni di vendita per maggiori dettagli) saranno comprensivi
+            di IVA, dove applicabile.
+          </p>
+        </div>
+        <div class="linea-grigia"></div>
+        <div class="footer-trust">
+          <p>© 2024 Electronic Arts Inc.</p>
+          <img src="../immagini/Trust.svg" alt="trust" />
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
